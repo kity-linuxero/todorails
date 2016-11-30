@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Task list:</strong>
+  <%= @task.task_list %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @task.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @task.status %>
+</p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @task.priority %>
+</p>
+
+<p>
+  <strong>Percentage of completion:</strong>
+  <%= @task.percentage_of_completion %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @task.type %>
+</p>
+
+<p>
+  <strong>Start at:</strong>
+  <%= @task.start_at %>
+</p>
+
+<p>
+  <strong>End at:</strong>
+  <%= @task.end_at %>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>
