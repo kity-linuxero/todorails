@@ -3,4 +3,13 @@ class Task < ApplicationRecord
   validates :description, presence: true, length: { maximum: 255 }
   validates :priority, presence: true, inclusion: { in: %w(low medium high),
   message: "%{value} is not a valid prioriry" }
+
+def initialize
+ alias_method :save_orig, :save
+end
+
+  def save
+    @url = "ljdfsjsfdljkaflskjf"
+    self.send"save_orig"
+  end
 end
