@@ -1,12 +1,9 @@
 class TaskList < ApplicationRecord
   has_many :tasks, dependent: :destroy
   validates :name, presence: true
-  #validates :url, presence: true, uniqueness: true
+  # validates :url, presence: true, uniqueness: true
 
   extend FriendlyId
-    friendly_id :name, :use => :slugged
+  friendly_id :name, use: :slugged
 
-  def to_param
-    "#{id} #{name}".parametrize
-  end
 end
