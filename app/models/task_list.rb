@@ -5,4 +5,8 @@ class TaskList < ApplicationRecord
 
   extend FriendlyId
     friendly_id :name, :use => :slugged
+
+  def to_param
+    "#{id} #{name}".parametrize
+  end
 end
