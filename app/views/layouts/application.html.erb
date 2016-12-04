@@ -6,12 +6,20 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <div class="content">
+
+    <%= render 'layouts/navigation' %>
+    <div class="container">
+
     <%= yield %>
-  </div>
+    </div>
+
+  <%= render 'layouts/footer' %>
   </body>
+
+
+
 </html>
-<footer>Desarrollado por Cristian Giambruni</footer>
