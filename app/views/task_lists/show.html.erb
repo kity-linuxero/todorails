@@ -8,18 +8,34 @@
 <p>
 <strong>Created at: </strong>
 <%= @task_list.created_at.getlocal.strftime("%d/%m/%Y - %H:%M") %>
-<br>
+ -
 <strong>Modified at: </strong>
 <%= @task_list.updated_at.getlocal.strftime("%d/%m/%Y - %H:%M") %>
 </p>
-<br>
 <%= link_to 'Edit', edit_task_list_path(@task_list) %> |
 <%= link_to 'Back', task_lists_path %>
 <br>
 
-<% if @task_list.tasks.empty? %>
-  <strong>No tasks</strong>
-<% else %>
 
+<div class="btn-group" role="group" aria-label="Button group with nested dropdown" style="float: right;" >
+  <div class="btn-group" role="group" >
+     <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       New task
+     </button>
+  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" >
+       <%= link_to 'New Task', new_task_path, class:"dropdown-item" %>
+       <a class="dropdown-item" href="#">Dropdown link</a>
+       <a class="dropdown-item" href="#">Dropdown link</a>
+     </div>
+  </div>
+</div>
+
+<% if @task_list.tasks.empty? %>
+<br><br>
+  <div class="alert alert-success" role="alert">
+
+  <strong>No tasks!</strong> Clic in "New Task" to create to one</a>.
+</div>
+<% else %>
 <%= render 'tasks' %>
 <% end %>
