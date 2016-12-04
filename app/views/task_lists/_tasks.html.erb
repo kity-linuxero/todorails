@@ -17,7 +17,7 @@
   </thead>
 
   <tbody>
-    <% @task_list.tasks.each do |task| %>
+    <% @task_list.tasks.sort.each do |task| %>
       <tr>
         <td><%= task.description %></td>
         <td><%= task.status %></td>
