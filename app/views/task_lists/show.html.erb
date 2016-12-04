@@ -5,9 +5,18 @@
   <%= @task_list.name %></h2>
 </p>
 
+<p>
+<strong>Created at: </strong>
+<%= @task_list.created_at.getlocal.strftime("%d/%m/%Y - %H:%M") %>
+<br>
+<strong>Modified at: </strong>
+<%= @task_list.updated_at.getlocal.strftime("%d/%m/%Y - %H:%M") %>
+</p>
+<br>
 <%= link_to 'Edit', edit_task_list_path(@task_list) %> |
 <%= link_to 'Back', task_lists_path %>
 <br>
+
 <% if @task_list.tasks.empty? %>
   <strong>No tasks</strong>
 <% else %>
