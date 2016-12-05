@@ -11,9 +11,8 @@
       <% end %>
       </ul>
     </div>
-
-
   <% end %>
+
 
   <div class="field">
     <%= f.label :description %>
@@ -22,12 +21,12 @@
 
   <div class="field">
     <%= f.label :status %>
-    <%= f.text_field :status %>
+      <%= f.select(:status, [['pending'], ['done']]) %>
   </div>
 
   <div class="field">
     <%= f.label :priority %>
-    <%= f.text_field :priority %>
+    <%= f.select(:priority, [['high'], ['medium'], ['low']]) %>
   </div>
 
   <div class="field">
