@@ -1,9 +1,8 @@
 <%= render 'layouts/notice' %>
 
-<p>
-  <h3><strong>Task list:</strong>
-  <%= @task_list.name %></h3>
-</p>
+
+  <h3><strong><%= @task_list.name %></strong></h3>
+
 
 <p>
 <strong>Created at: </strong>
@@ -14,6 +13,7 @@
 </p>
 <%= link_to 'Edit', edit_task_list_path(@task_list) %> |
 <%= link_to 'Back', task_lists_path %>
+<hr>
 <br>
 
 
