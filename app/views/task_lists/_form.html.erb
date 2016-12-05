@@ -1,20 +1,25 @@
 <%= form_for(task_list, html: { class: 'form-horizontal' }) do |f| %>
   <% if task_list.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(task_list.errors.count, "error") %> prohibited this task_list from being saved:</h2>
-
+    <div class="alert alert-danger alert-dismissible fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <strong><%= pluralize(task_list.errors.count, "error") %></strong> prohibited this task_list from being saved:
       <ul>
       <% task_list.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
-  <% end %>
 
-  <div class="form-group row" align="center">
+
+<% end %>
+
+
+  <div align="center">
       <%= f.text_field :name , placeholder: "Write a new task list", class: "form-control input-lg"%>
   </div>
-
+<br>
   <div class="actions" align="center">
     <%= f.submit :Submit, class: "btn btn-primary btn-lg btn-block " %>
   </div>
