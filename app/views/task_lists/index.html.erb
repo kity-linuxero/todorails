@@ -2,10 +2,11 @@
 
 <h2>Task Lists</h2>
 
-<table>
-  <thead>
+<table class="table">
+  <thead class="thead-default">
     <tr>
       <th>Name</th>
+      <th>Taks</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
     <% @task_lists.each do |task_list| %>
       <tr>
         <td><%= task_list.name %></td>
+        <td><%= task_list.tasks.count%></td>
         <td><%= link_to 'Show', task_list %></td>
         <td><%= link_to 'Edit', edit_task_list_path(task_list) %></td>
         <td><%= link_to 'Destroy', task_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
