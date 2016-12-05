@@ -1,13 +1,12 @@
 <%= render 'layouts/notice' %>
 
 <p>
-  <strong>Task list:</strong>
-  <%= @task.task_list %>
+  <strong><%= @task.description %></strong>
 </p>
-
+<hr>
 <p>
-  <strong>Description:</strong>
-  <%= @task.description %>
+  <strong>Task list:</strong>
+  <%= @task.task_list.name %>
 </p>
 
 <p>
@@ -32,12 +31,12 @@
 
 <p>
   <strong>Start at:</strong>
-  <%= @task.start_at %>
+  <%= @task.start_at.getlocal.strftime("%d/%m/%Y - %H:%M") %>
 </p>
 
 <p>
   <strong>End at:</strong>
-  <%= @task.end_at %>
+  <%= @task.end_at.getlocal.strftime("%d/%m/%Y - %H:%M") %>
 </p>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
