@@ -5,8 +5,33 @@
       <a class="nav-link" href="/task_lists">All my task lists</a>
     </li>
     <li class="nav-item ">
-      <a class="nav-link" href="#">About</a>
+      <a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-sm" href="#">About</a>
     </li>
   </ul>
 </nav>
 <br>
+
+<!-- Small modal -->
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+
+              <h4 class= "modal-title"><strong>TODO Rails</strong></h4>
+
+          </div>
+
+
+      <div class="modal-body">
+      <p>© 2016 - Cristian Giambruni</p>
+      <p>MIT License</p>
+      </div>
+      <div class="modal-footer">
+        UNLP, TTPS 2016 - Ruby <a href="https://github.com/kity-linuxero/todorails">
+          <%= image_tag("github.png", size: "32") %>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
