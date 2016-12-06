@@ -1,9 +1,9 @@
 class LongTask < Task
 	validates :status, presence: true, inclusion: { in: %w(pending done in_progress),
-    message: "%{value} is not a valid status for a long task" }
+    message: "%{value} is not a valid status for a long task for a LongTask" }
 
     validates :percentage_of_completion, presence: true, inclusion: { in: (0..100),
-    message: "%{value} is not a valid percentage number" }
+    message: "%{value} is not a valid percentage number for a LongTask" }
 
 		def self.model_name
 			Task.model_name
@@ -22,6 +22,6 @@ class LongTask < Task
 		end
 
 		def percentage_of_completion_task
-			"#{percentage_of_completion} %"
+			percentage_of_completion
 		end
 end

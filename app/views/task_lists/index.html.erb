@@ -2,7 +2,8 @@
 <% unless @task_lists.empty? %>
 <h2>Task Lists</h2>
 
-<table class="table">
+<div class="table-responsive">
+<table class="table table-sm" >
   <thead class="thead-default">
     <tr>
       <th>Name</th>
@@ -23,6 +24,7 @@
     <% end %>
   </tbody>
 </table>
+</div>
 <% else %>
   <div class="alert alert-warning" role="alert">
 

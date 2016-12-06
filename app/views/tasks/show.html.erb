@@ -1,5 +1,5 @@
 <%= render 'layouts/notice' %>
-
+<div class="col-xs-7">
 <p>
   <strong><%= @task.description %></strong>
 </p>
@@ -32,8 +32,10 @@
 
 <% if @task.type == "LongTask" %>
 <p>
-  <strong>Percentage of completion:</strong>
-  <%= @task.percentage_of_completion %>
+
+
+<div class="text-xs " id="example-caption-2">Percentage of completion: <%= @task.percentage_of_completion %></div>
+<progress class="progress progress-info" value=<%= @task.percentage_of_completion %> max="100" aria-describedby="example-caption-2"></progress>
 </p>
 <% end %>
 
@@ -50,6 +52,7 @@
 </p>
 
 <% end %>
-
+<hr>
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', @task.task_list %>
+</div>
