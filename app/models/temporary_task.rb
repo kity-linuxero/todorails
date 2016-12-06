@@ -16,4 +16,17 @@ class TemporaryTask < Task
 			status
 		end
 	end
+
+	def start_at_task
+		start_at.getlocal.strftime("%d/%m/%Y - %H:%M")
+	end
+
+	def end_at_task
+		end_at.getlocal.strftime("%d/%m/%Y - %H:%M")
+	end
+
+	def percentage_of_completion_task
+		nil
+	end
+
 end
