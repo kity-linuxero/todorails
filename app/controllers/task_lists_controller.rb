@@ -1,7 +1,7 @@
 class TaskListsController < ApplicationController
   before_action :set_task_list, only: [:show, :edit, :update, :destroy]
   before_action :destroy_from_cookie, only: [:destroy]
-  before_action :list_ids, only: [:index]
+  before_action :list_ids, only: [:index, :new]
   after_action :save_in_cookie, only: [:create]
 
   # GET /task_lists
@@ -18,6 +18,7 @@ class TaskListsController < ApplicationController
   # GET /task_lists/new
   def new
     @task_list = TaskList.new
+    @last_list_tasks = TaskList.find(list_ids).last(5)
   end
 
   # GET /task_lists/1/edit

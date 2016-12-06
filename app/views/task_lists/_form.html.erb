@@ -24,3 +24,7 @@
     <%= f.submit :Submit, class: "btn btn-primary btn-lg" %>
   </div>
 <% end %>
+
+<% unless @last_list_tasks.nil? ||  @last_list_tasks.empty? %>
+<%= render 'last_list_tasks' %>
+<% end %>
