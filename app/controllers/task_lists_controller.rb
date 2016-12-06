@@ -1,12 +1,13 @@
 class TaskListsController < ApplicationController
   before_action :set_task_list, only: [:show, :edit, :update, :destroy]
   before_action :destroy_from_cookie, only: [:destroy]
+  before_action :list_ids, only: [:index]
   after_action :save_in_cookie, only: [:create]
 
   # GET /task_lists
   # GET /task_lists.json
   def index
-    @task_lists = TaskList.all
+    @task_lists = TaskList.find(list_ids)
   end
 
   # GET /task_lists/1
@@ -80,5 +81,10 @@ class TaskListsController < ApplicationController
 
     def destroy_from_cookie
       cookies.delete (@task_list.id)
+    end
+
+    def list_ids
+      a= cookies.select { |x| x[0].to_s.match(/^\d+$/) }
+      Hash[a].keys
     end
 end

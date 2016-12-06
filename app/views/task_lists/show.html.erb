@@ -1,3 +1,7 @@
+<% if @task_list.nil? %>
+<% redirect_to new_task_list_task_path, notice: 'No hay listas' %>
+<%else%>
+
 <%= render 'layouts/notice' %>
 
 
@@ -28,4 +32,6 @@
 </div>
 <% else %>
 <%= render 'tasks' %>
+<% end %>
+
 <% end %>
