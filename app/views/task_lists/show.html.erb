@@ -12,7 +12,8 @@
 <%= @task_list.updated_at.getlocal.strftime("%d/%m/%Y - %H:%M") %>
 </p>
 <%= link_to 'Edit', edit_task_list_path(@task_list) %> |
-<%= link_to 'Back', task_lists_path %>
+<%= link_to 'Back', task_lists_path %> |
+<%= link_to 'Destroy', @task_list, method: :delete, data: { confirm: 'Are you sure?' } %>
 <hr>
 
 <div style="float: right;">
