@@ -1,5 +1,5 @@
-<h1>New Task for </h1>
-
+<h3>New Task for <%= @task_list.name %> </h3>
+<hr>
 <%= render 'form', task: @task, task_list: @task_list %>
 
 <%= link_to 'Back', @task_list %>
