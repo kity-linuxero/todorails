@@ -9,4 +9,11 @@ class TemporaryTask < Task
 			Task.model_name
 		end
 
+		def status_task
+			if end_at < Time.now
+			"expired"
+		else
+			status
+		end
+	end
 end

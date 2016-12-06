@@ -5,4 +5,8 @@ class SimpleTask < Task
 		def self.model_name
     	Task.model_name
   	end
+
+		def status_task
+			status
+		end
 end
