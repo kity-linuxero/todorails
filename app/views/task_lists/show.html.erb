@@ -15,16 +15,8 @@
 <%= link_to 'Back', task_lists_path %>
 <hr>
 
-<div class="btn-group" role="group" aria-label="Button group with nested dropdown" style="float: right;" >
-  <div class="btn-group" role="group" >
-     <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-       New task
-     </button>
-  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" >
-       <%= link_to 'New Task', new_task_list_task_path(@task_list, @task), class:"dropdown-item" %>
-       <%= link_to 'Ad details', new_task_list_task_path(@task_list, @task), class:"dropdown-item" %>
-     </div>
-  </div>
+<div style="float: right;">
+<%= button_to 'New Task', new_task_list_task_path(@task_list, @task), method: :get, class: 'btn btn-outline-primary' %>
 </div>
 
 <% if @task_list.tasks.empty? %>
