@@ -4,6 +4,12 @@
   <strong><%= @task.description %></strong>
 </p>
 <hr>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @task.created_at.getlocal.strftime("%d/%m/%Y - %H:%M") %>
+</p>
+
 <p>
   <strong>Task list:</strong>
   <%= @task.task_list.name %>
