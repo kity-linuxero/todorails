@@ -5,5 +5,8 @@ class TemporaryTask < Task
     validates :start_at, presence: true
     validates :end_at, presence: true
 
+		def self.model_name
+			Task.model_name
+		end
 
 end

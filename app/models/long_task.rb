@@ -4,4 +4,8 @@ class LongTask < Task
 
     validates :percentage_of_completion, presence: true, inclusion: { in: (0..100),
     message: "%{value} is not a valid percentage number" }
+
+		def self.model_name
+			Task.model_name
+		end
 end
