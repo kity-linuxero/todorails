@@ -10,8 +10,8 @@
 </p>
 
 <p>
-  <strong>Status:</strong>
-  <%= @task.status_task %>
+  <strong>Type:</strong>
+  <%= @task.type %>
 </p>
 
 <p>
@@ -20,14 +20,18 @@
 </p>
 
 <p>
+  <strong>Status:</strong>
+  <%= @task.status_task %>
+</p>
+
+<% if @task.type == "LongTask" %>
+<p>
   <strong>Percentage of completion:</strong>
   <%= @task.percentage_of_completion %>
 </p>
+<% end %>
 
-<p>
-  <strong>Type:</strong>
-  <%= @task.type %>
-</p>
+<% if @task.type == "TemporaryTask" %>
 
 <p>
   <strong>Start at:</strong>
@@ -38,6 +42,8 @@
   <strong>End at:</strong>
   <%= @task.end_at.getlocal.strftime("%d/%m/%Y - %H:%M") %>
 </p>
+
+<% end %>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', @task.task_list %>

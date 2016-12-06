@@ -13,6 +13,14 @@
     </div>
   <% end %>
 
+<% unless task.type.nil?%>
+  <div class="form-group row">
+    <label class="col-xs-1 col-form-label">Type:</label>
+    <div class="col-xs-5">
+      <p class="form-control-static mb-0"><%= task.type %></p>
+    </div>
+  </div>
+<% end %>
 
   <div class="form-group row">
     <%= f.label :description, class:"col-xs-1 col-form-label", :maxlength => "10" %>
@@ -21,12 +29,14 @@
     </div>
   </div>
 
+<% if task.type.nil? %>
   <div class="form-group row">
     <%= f.label :type, class:"col-xs-1 col-form-label" %>
     <div class="col-xs-5">
     <%= f.select(:type, [['SimpleTask'], ['LongTask'], ['TemporaryTask']], {}, class: "form-control") %>
   </div>
   </div>
+<% end %>
 
   <div class="form-group row">
     <%= f.label :status, class:"col-xs-1 col-form-label" %>
@@ -42,13 +52,16 @@
   </div>
   </div>
 
+<% if task.type.nil? || task.type == "LongTask" %>
   <div class="form-group row">
     <%= f.label :percentage_of_completion, class:"col-xs-1 col-form-label" %>
     <div class="col-xs-5">
     <%= f.number_field :percentage_of_completion, class: "form-control", in: 0..100 %>
   </div>
   </div>
+<% end %>
 
+<% if task.type.nil? || task.type == "TemporaryTask" %>
   <div class="form-group row">
     <%= f.label :start_at, class:"col-xs-1 col-form-label"  %>
     <div class="col-xs-5">
@@ -62,6 +75,7 @@
     <%= f.datetime_select :end_at %>
   </div>
   </div>
+<% end %>
 
   <div class="actions">
     <%= f.submit :Create, class: "btn btn-success" %>
