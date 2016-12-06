@@ -30,6 +30,7 @@ class TasksController < ApplicationController
     @task.task_list = @task_list
     respond_to do |format|
       if @task.save
+        @task.task_list.touch
         format.html { redirect_to @task.task_list, notice: 'Task was successfully created.' }
         format.json { render :show, status: :created, location: @task }
       else
@@ -44,6 +45,7 @@ class TasksController < ApplicationController
   def update
     respond_to do |format|
       if @task.update(task_params)
+        @task.task_list.touch
         format.html { redirect_to @task.task_list, notice: 'Task was successfully updated.' }
         format.json { render :show, status: :ok, location: @task }
       else
