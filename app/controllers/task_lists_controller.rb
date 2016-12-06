@@ -1,5 +1,7 @@
 class TaskListsController < ApplicationController
   before_action :set_task_list, only: [:show, :edit, :update, :destroy]
+  before_action :destroy_from_cookie, only: [:destroy]
+  after_action :save_in_cookie, only: [:create]
 
   # GET /task_lists
   # GET /task_lists.json
@@ -69,6 +71,14 @@ class TaskListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_list_params
-      params.require(:task_list).permit(:name)
+      params.require(:task_list).permit(:name, :id)
+    end
+
+    def save_in_cookie
+      cookies[@task_list.id] = @task_list.name
+    end
+
+    def destroy_from_cookie
+      cookies.delete (@task_list.id)
     end
 end
