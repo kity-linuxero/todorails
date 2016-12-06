@@ -4,6 +4,9 @@ class Task < ApplicationRecord
   validates :priority, presence: true, inclusion: { in: %w(low medium high),
   message: "%{value} is not a valid priority" }
 
+  validates :type, presence: true, inclusion: { in: %w(SimpleTask LongTask TemporaryTask),
+  message: "%{value} is not a valid task" }
+
   PRIORITIES = {
     'high' => 3,
     'medium'  => 2,
