@@ -23,7 +23,7 @@ class LongTask < Task
 		end
 
 		def percentage_of_completion_task
-			percentage_of_completion
+			"#{percentage_of_completion}%"
 		end
 
 		def type_taks
