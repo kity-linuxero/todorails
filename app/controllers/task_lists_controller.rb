@@ -77,7 +77,7 @@ class TaskListsController < ApplicationController
     end
 
     def save_in_cookie
-      cookies[@task_list.id] = @task_list.name
+      cookies[@task_list.id] = @task_list.friendly_id
     end
 
     def destroy_from_cookie
