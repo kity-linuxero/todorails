@@ -33,7 +33,7 @@
   <div class="form-group row">
     <%= f.label :type, class:"col-xs-1 col-form-label" %>
     <div class="col-xs-5">
-    <%= f.select(:type, [['SimpleTask'], ['LongTask'], ['TemporaryTask']], {}, class: "form-control") %>
+    <%= f.select(:type, [['Simple','SimpleTask'], ['Long','LongTask'], ['Temporary','TemporaryTask']], {}, class: "form-control") %>
   </div>
   </div>
 <% end %>
@@ -41,7 +41,7 @@
   <div class="form-group row">
     <%= f.label :status, class:"col-xs-1 col-form-label" %>
     <div class="col-xs-5">
-    <%= f.select(:status, [['pending'], ['done']], {}, class: "form-control") %>
+    <%= f.select(:status, [['Pending','pending'], ['Done','done']], {}, class: "form-control") %>
     </div>
   </div>
 
