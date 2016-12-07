@@ -7,6 +7,9 @@ class Task < ApplicationRecord
   validates :type, presence: true, inclusion: { in: %w(SimpleTask LongTask TemporaryTask),
   message: "%{value} is not a valid task" }
 
+  validates :status, presence: true, inclusion: { in: %w(pending done),
+    message: "%{value} is not a valid status for a simple task" }
+
   validates_associated :task_list
 
   PRIORITIES = {
@@ -18,5 +21,4 @@ class Task < ApplicationRecord
   def <=> (other)
     PRIORITIES[other.priority] <=> PRIORITIES[self.priority]
   end
-
 end
