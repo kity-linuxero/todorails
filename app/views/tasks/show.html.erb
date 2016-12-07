@@ -16,18 +16,18 @@
 </p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @task.type %>
+  <strong>Type of task:</strong>
+  <%= @task.type_taks %>
 </p>
 
 <p>
   <strong>Priority:</strong>
-  <%= @task.priority %>
+  <%= @task.priority.humanize %>
 </p>
 
 <p>
   <strong>Status:</strong>
-  <%= @task.status %>
+  <%= @task.status.humanize %>
 </p>
 
 <% if @task.type == "LongTask" %>

@@ -19,4 +19,8 @@ class SimpleTask < Task
 		def percentage_of_completion_task
 			nil
 		end
+
+		def type_taks
+			"Simple"
+		end
 end

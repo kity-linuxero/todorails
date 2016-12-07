@@ -48,7 +48,7 @@
   <div class="form-group row">
     <%= f.label :priority, class:"col-xs-1 col-form-label" %>
     <div class="col-xs-5">
-    <%= f.select(:priority, [['high'], ['medium'], ['low']], {}, class: "form-control") %>
+    <%= f.select(:priority, [['High','high'], ['Medium','medium'], ['Low','low']], {}, class: "form-control") %>
   </div>
   </div>
 
@@ -81,7 +81,7 @@
 <% end %>
 
   <div class="actions">
-    <%= f.submit :Create, class: "btn btn-success" %>
+    <%= f.submit :Submit, class: "btn btn-success" %>
   </div>
-
+<br>
 <% end %>

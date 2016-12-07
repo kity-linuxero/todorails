@@ -10,7 +10,7 @@ class LongTask < Task
 			if (1..99) === percentage_of_completion
 				"in progress"
 			else
-				orig_stat
+				status
 			end
 		end
 
@@ -24,5 +24,9 @@ class LongTask < Task
 
 		def percentage_of_completion_task
 			percentage_of_completion
+		end
+
+		def type_taks
+			"Long"
 		end
 end
