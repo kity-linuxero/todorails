@@ -4,6 +4,7 @@ class TaskListsController < ApplicationController
   before_action :list_ids, only: [:index, :new]
   after_action :save_in_cookie, only: [:create]
 
+  rescue_from RecordNotFound, with: :record_not_found
   # GET /task_lists
   # GET /task_lists.json
   def index
@@ -88,4 +89,8 @@ class TaskListsController < ApplicationController
       a= cookies.select { |x| x[0].to_s.match(/^\d+$/) }
       Hash[a].keys
     end
+
+    def record_not_found
+     raise ActionController::RoutingError.new('Not Found')
+   end
 end
