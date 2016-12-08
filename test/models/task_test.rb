@@ -2,6 +2,9 @@ require 'test_helper'
 
 class TaskTest < ActiveSupport::TestCase
 
+  # Clean test data base
+  Task.all.map {|x| x.destroy}
+
   # Creación de una nueva tarea sin ningún dato.
   test "Empty task" do
     one= Task.new
@@ -123,20 +126,22 @@ class TaskTest < ActiveSupport::TestCase
    # Ordenamiento de tareas: De diferentes tipos, con diferentes prioridades.
    test "Order of tasks" do
      # Simple Task with low priority
-     one= SimpleTask.new do |t|
+     t1= SimpleTask.new do |t|
         t.description= "one"
         t.status= %w(pending done).shuffle.first
         t.priority= "low"
      end
+
      # Long Task with low priority
-     two= LongTask.new do |t|
+     t2= LongTask.new do |t|
       t.description= "two"
       t.status= %w(pending done).shuffle.first
       t.percentage_of_completion= 50
       t.priority= "medium"
-   end
+     end
+
    #TemporaryTask
-   three= TemporaryTask.new do |t|
+   t3= TemporaryTask.new do |t|
      t.description= "three"
      t.status= %w(pending done).shuffle.first
      t.priority= "high"
@@ -144,30 +149,34 @@ class TaskTest < ActiveSupport::TestCase
      t.end_at= 5.minutes.from_now
    end
 
-   assert one.save
-   assert two.save
-   assert three.save
+   assert t1.save
+   assert t2.save
+   assert t3.save
 
    sorted_list = Task.all.sort
+   # First place
    assert (sorted_list.first.priority == "high" && sorted_list.first.description == "three")
+   # Second place
    assert (sorted_list.second.priority == "medium" && sorted_list.second.description == "two")
-   assert (sorted_list.last.priority == "low" && sorted_list.last.description == "one")
+   # Third place
+   assert (sorted_list.third.priority == "low" && sorted_list.third.description == "one")
 
    # Change priorities!!
-   one.priority= "medium"
-   two.priority= "high"
-   three.priority= "low"
+   t1.priority= "medium"
+   t2.priority= "high"
+   t3.priority= "low"
 
-   one.save
-   two.save
-   three.save
+   assert t1.save
+   assert t2.save
+   assert t3.save
 
    new_sorted_list = Task.all.sort
-   p new_sorted_list.first
-  # assert (new_sorted_list.first.priority == "high" && new_sorted_list.first.description == "two")
-   assert (new_sorted_list.second.priority == "medium")# && new_sorted_list.second.description == "one")
-   #puts "PRIO== #{new_sorted_list.first.priority} TASK= #{new_sorted_list.second.description}"
-   assert (new_sorted_list.last.priority == "low" && new_sorted_list.last.description == "three")
+   # First place
+   assert (new_sorted_list.first.priority == "high" && new_sorted_list.first == t2)
+   # Second place
+   assert (new_sorted_list.second.priority == "medium" && new_sorted_list.second == t1)
+   # Third place
+   assert (new_sorted_list.third.priority == "low" && new_sorted_list.third == t3)
 
-end
+ end
 end
