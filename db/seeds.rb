@@ -51,7 +51,7 @@ Task.create! [
 {
   description: 'Trabajo final Ruby',
   type: 'LongTask',
-  status: 'in_progress',
+  status: 'pending',
   priority: 'high',
   percentage_of_completion: '90',
   task_list: TaskList.find_by(name: 'Lista 0')
@@ -60,9 +60,9 @@ Task.create! [
 {
   description: 'Arreglar la bicicleta',
   type: 'LongTask',
-  status: 'in_progress',
+  status: 'done',
   priority: 'low',
-  percentage_of_completion: '15',
+  percentage_of_completion: '100',
   task_list: TaskList.find_by(name: 'Lista 0')
 },
 ]
