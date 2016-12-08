@@ -95,7 +95,6 @@ class TaskTest < ActiveSupport::TestCase
    test "Percentage of LongTask must be valid" do
      one = LongTask.new do |t|
        t.description= "New Long Task"
-       t.status= "pending"
        t.priority= "medium"
      end
     assert_not one.save # Without percentage!
@@ -106,10 +105,9 @@ class TaskTest < ActiveSupport::TestCase
    end
 
    # Estado de una LongTask
-   test "Status of LongTask the 'in_progress' status not exist." do
+   test "The percentage of completion determines status" do
      one = LongTask.new do |t|
        t.description= "New Long Task"
-       t.status= "pending"
        t.priority= "low"
        t.percentage_of_completion= 0
      end
@@ -118,9 +116,7 @@ class TaskTest < ActiveSupport::TestCase
      one.percentage_of_completion = 1
      assert (one.status_task == "in progress")
      one.percentage_of_completion = 100
-     assert (one.status_task) == "pending" #if percentage if 0 or 100 status don't change!
-     one.status= "in progress"
-     assert_not one.save #in progress not a valid status for storage
+     assert (one.status_task == "done")
    end
 
    # Ordenamiento de tareas: De diferentes tipos, con diferentes prioridades.

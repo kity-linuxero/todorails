@@ -7,11 +7,14 @@ class LongTask < Task
 		end
 
 		def status_task
-			if (1..99) === percentage_of_completion
-				"in progress"
-			else
-				status
-			end
+      case percentage_of_completion
+        when (1..99)
+          "in progress"
+        when 0
+          "pending"
+        when 100
+          "done"
+       end    
 		end
 
 		def start_at_task
