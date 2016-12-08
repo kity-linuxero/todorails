@@ -26,7 +26,7 @@
         <td><%= task.end_at_task %></td>
         <td><%= link_to 'Details', task %></td>
         <td><%= link_to 'Edit', edit_task_path(task, @task_list) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
