@@ -7,9 +7,6 @@ class Task < ApplicationRecord
   validates :type, presence: true, inclusion: { in: %w(SimpleTask LongTask TemporaryTask),
   message: "%{value} is not a valid task" }
 
-  validates :status, presence: true, inclusion: { in: %w(pending done),
-    message: "%{value} is not a valid status." }
-
   validates_associated :task_list
 
   PRIORITIES = {

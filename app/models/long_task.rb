@@ -14,7 +14,7 @@ class LongTask < Task
           "pending"
         when 100
           "done"
-       end    
+       end
 		end
 
 		def start_at_task
