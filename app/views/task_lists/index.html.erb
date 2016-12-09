@@ -1,5 +1,5 @@
 <%= render 'layouts/notice' %>
-<% unless @task_lists.empty? %>
+<% unless @task_lists.nil? or @task_lists.empty? %>
 <h3>All my task lists:</h3>
 
 <div class="table-responsive">
