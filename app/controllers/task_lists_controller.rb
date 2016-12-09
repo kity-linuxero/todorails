@@ -8,7 +8,11 @@ class TaskListsController < ApplicationController
   # GET /task_lists
   # GET /task_lists.json
   def index
+    begin
     @task_lists = TaskList.find(list_ids)
+    rescue ActiveRecord::RecordNotFound
+      purge_invalid_cookies
+  end
   end
 
   # GET /task_lists/1
@@ -19,7 +23,12 @@ class TaskListsController < ApplicationController
   # GET /task_lists/new
   def new
     @task_list = TaskList.new
+    begin
     @last_list_tasks = TaskList.find(list_ids).last(5)
+    rescue ActiveRecord::RecordNotFound
+      purge_invalid_cookies
+      retry
+    end
   end
 
   # GET /task_lists/1/edit
@@ -96,5 +105,13 @@ class TaskListsController < ApplicationController
 
     def record_not_found
      raise ActionController::RoutingError.new('Not Found')
-   end
+    end
+
+   def purge_invalid_cookies
+     list_ids.each do |x|
+       unless TaskList.exists?(id: x)
+         cookies.delete(x)
+       end
+     end
+    end
 end
