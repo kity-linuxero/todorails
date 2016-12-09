@@ -69,4 +69,17 @@ Para iniciar el web server:
 Para acceder:
 [http://localhost:3000](http://localhost:3000)
 
+### ¿Un caso de prueba?
+[http://localhost:3000/task_lists/lista-0](http://localhost:3000/task_lists/lista-0)
 
+# Unit Test
+Puedes correr los Unit Test para esta aplicación.
+
+* Para el modelo de TaskList:
+```bash
+  $ rails test test/models/task_list_test.rb
+ ```
+* Para el modelo de Task
+```bash
+  $ rails test test/models/task_test.rb
+ ```
