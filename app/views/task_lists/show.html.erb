@@ -1,5 +1,4 @@
 <%= render 'layouts/notice' %>
-<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
   <h3><strong><%= @task_list.name %></strong></h3>
 
@@ -13,8 +12,7 @@
 </p>
 <%= link_to 'Edit', edit_task_list_path(@task_list) %> |
 <%= link_to 'Back', task_lists_path %> |
-<%= link_to 'Delete', @task_list, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<a href="" onclick="CopyLink()">Copy URL</a>
+<%= link_to 'Delete', @task_list, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <hr>
 
