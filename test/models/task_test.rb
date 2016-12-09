@@ -1,18 +1,19 @@
 require 'test_helper'
 
 class TaskTest < ActiveSupport::TestCase
-
-  # Clean test data base
-  Task.all.map {|x| x.destroy}
+  setup do
+    # Clean test data base
+    Task.all.map {|x| x.destroy}
+  end
 
   # Creación de una nueva tarea sin ningún dato.
-  test "Empty task" do
+  test "An empty task don't should be created" do
     one= Task.new
     assert_not one.save
   end
 
   # Una tarea "genérica" sin tipo. Debe fallar.
-  test "Generic Task Should be invalid" do
+  test "A generic task don't should be created" do
   	one = Task.new do |t|
   	  t.description= "A new generic task"
   	  t.created_at = Time.now
@@ -23,7 +24,7 @@ class TaskTest < ActiveSupport::TestCase
   end
 
    # Una tarea con una descripción mas larga de lo permitido
-   test "A long description must be invalid" do
+   test "A Task with a long description don't should be created" do
     one = SimpleTask.new do |t|
   	  t.description = "a"*256
   	  t.status = "done"
@@ -36,7 +37,7 @@ class TaskTest < ActiveSupport::TestCase
    end
 
    # Una tarea con una prioridad inválida
-   test "an invalid priority" do
+   test "A Task with an invalid priority, should be invalid to save" do
     one = SimpleTask.new do |t|
   	  t.description= "A new task"
   	  t.status = "pending"
@@ -48,7 +49,7 @@ class TaskTest < ActiveSupport::TestCase
    end
 
    # Una TemporaryTask se pasa a expired explícitamente
-   test "A TemporaryTask switch to expired" do
+   test "A TemporaryTask switch to expired, should be invalid to save" do
      one = TemporaryTask.new do |t|
        t.description= "A new TemporaryTask"
        t.status= "pending"
@@ -62,7 +63,7 @@ class TaskTest < ActiveSupport::TestCase
    end
 
    # Una tarea expirada cambia de fecha de expiración
-   test "A TemporaryTask task expired change the end" do
+   test "A TemporaryTask task expired change end_at" do
      one = TemporaryTask.new do |t|
        t.description= "New TemporaryTask"
        t.status= "pending"
