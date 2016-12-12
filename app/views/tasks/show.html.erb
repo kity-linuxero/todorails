@@ -1,5 +1,5 @@
 <%= render 'layouts/notice' %>
-<div class="col-xs-7">
+<div class="col-xs-12">
 <p>
   <strong><%= @task.description %></strong>
 </p>
@@ -34,7 +34,7 @@
 <p>
 
 
-<div class="text-xs " id="example-caption-2">Percentage of completion: <%= @task.percentage_of_completion %></div>
+<div class="text-xs " id="example-caption-2">Percentage of completion: <%= @task.percentage_of_completion %>%</div>
 <progress class="progress progress-primary" value=<%= @task.percentage_of_completion %> max="100" aria-describedby="example-caption-2"></progress>
 </p>
 <% end %>
