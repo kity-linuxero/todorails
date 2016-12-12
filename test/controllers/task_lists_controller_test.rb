@@ -11,13 +11,13 @@ class TaskListsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get new_task_list_url
+    get root_url
     assert_response :success
   end
 
   test "should create task_list" do
     assert_difference('TaskList.count') do
-      post task_lists_url, params: { task_list: { name: @task_list.name, url: @task_list.url } }
+      post task_lists_url, params: { task_list: { name: @task_list.name } }
     end
 
     assert_redirected_to task_list_url(TaskList.last)
@@ -34,7 +34,7 @@ class TaskListsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update task_list" do
-    patch task_list_url(@task_list), params: { task_list: { name: @task_list.name, url: @task_list.url } }
+    patch task_list_url(@task_list), params: { task_list: { name: @task_list.name } }
     assert_redirected_to task_list_url(@task_list)
   end
 

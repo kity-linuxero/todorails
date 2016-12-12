@@ -2,20 +2,24 @@
 
 one:
   task_list: one
-  description: MyString
-  status: MyString
-  priority: MyString
+  description: LongTask
+  status: pending
+  priority: low
   percentage_of_completion: 1
-  type: 
+  type: LongTask
+
+temporary:
+  task_list: one
+  description: TemporaryTask
+  status: pending
+  priority: low
+  type: TemporaryTask
   start_at: 2016-11-30 19:00:42
   end_at: 2016-11-30 19:00:42
 
-two:
-  task_list: two
-  description: MyString
-  status: MyString
-  priority: MyString
-  percentage_of_completion: 1
-  type: 
-  start_at: 2016-11-30 19:00:42
-  end_at: 2016-11-30 19:00:42
+simple:
+    task_list: one
+    description: SimpleTask
+    status: pending
+    priority: low
+    type: SimpleTask
