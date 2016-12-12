@@ -2,6 +2,10 @@
 
 TODO-Rails es una aplicación desarrollada con Ruby on Rails 5.0.1 como trabajo integrador de la materia Taller de Tecnologías de producción de Software opción Lenguaje Ruby (cursada 2016) de la Universidad Nacional de La Plata.
 
+# ¿Cómo pruebo TODO-Rails? HEROKU
+TODO-Rails está online en HEROKU para que lo puedas usar y probar.
+[https://todorails-ttps.herokuapp.com/](https://todorails-ttps.herokuapp.com/)
+
 # Instalación:
 ## Requerimientos
 
@@ -87,7 +91,11 @@ Puedes correr los Unit Test para esta aplicación.
 ```bash
   $ rails test test/controllers/task_lists_controller_test.rb
  ```
- 
+* Controller Task
+```bash
+  $ rails test test/controllers/tasks_controller_test.rb
+ ```
+
 # Conceptos básicos
  
 ## Tareas (Tasks)
