@@ -71,7 +71,7 @@ class TasksController < ApplicationController
       begin
       @task = Task.find(params[:id])
       rescue ActiveRecord::RecordNotFound
-        redirect_to root_url, notice: 'Error!. Not exist the Task List to add a new task.'
+        redirect_to root_url, notice: 'Error!. Not exist the Task.'
       end
     end
 
