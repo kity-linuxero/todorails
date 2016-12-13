@@ -68,8 +68,13 @@ class TasksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
+      begin
       @task = Task.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        redirect_to root_url, notice: 'Error!. Not exist the Task List to add a new task.'
+      end
     end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
@@ -77,8 +82,11 @@ class TasksController < ApplicationController
     end
 
     def set_task_list
-      @task_list = TaskList.friendly.find(params[:task_list_id])
+      begin
+        @task_list = TaskList.friendly.find(params[:task_list_id])
+      rescue ActiveRecord::RecordNotFound
+        redirect_to root_url, notice: 'Error!. Not exist the Task List to add a new task.'
+      end
     end
-
 
 end
