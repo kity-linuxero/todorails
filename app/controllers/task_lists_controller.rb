@@ -82,7 +82,7 @@ class TaskListsController < ApplicationController
         @task_list = TaskList.friendly.find(params[:id])
       rescue ActiveRecord::RecordNotFound
         #raise ActionController::RoutingError.new('Not Found')
-        redirect_to root_url, notice: 'Error!. Not exist the Task List.'
+        redirect_to root_url, notice: 'Task List does not exist.'
       end
     end
 
