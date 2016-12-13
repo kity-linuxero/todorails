@@ -7,8 +7,10 @@
   <thead class="thead-default">
     <tr>
       <th>Name</th>
-      <th>Tasks</th>
-      <th colspan="3"></th>
+      <th width="8%">Created at</th>
+      <th width="8%">Modifier at</th>
+      <th align="center" width="8%">Tasks</th>
+      <th colspan="3" width="5%"></th>
     </tr>
   </thead>
 
@@ -16,7 +18,9 @@
     <% @task_lists.each do |task_list| %>
       <tr>
         <td><%= task_list.name %></td>
-        <td><%= task_list.tasks.count%></td>
+        <td><%= task_list.created_at.getlocal.strftime("%m/%d/%Y")%></td>
+        <td><%= task_list.updated_at.getlocal.strftime("%m/%d/%Y")%></td>
+        <td align="center"><%= task_list.tasks.count%></td>
         <td><%= link_to 'Details', task_list %></td>
         <td><%= link_to 'Edit', edit_task_list_path(task_list) %></td>
         <td><%= link_to 'Delete', task_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
