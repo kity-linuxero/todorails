@@ -5,10 +5,10 @@
 
 <p>
 <strong>Created at: </strong>
-<%= @task_list.created_at.getlocal.strftime("%d/%m/%Y - %H:%M") %>
+<%= @task_list.created_at.getlocal.strftime("%m/%d/%Y - %H:%M") %>
  -
 <strong>Modified at: </strong>
-<%= @task_list.updated_at.getlocal.strftime("%d/%m/%Y - %H:%M") %>
+<%= @task_list.updated_at.getlocal.strftime("%m/%d/%Y - %H:%M") %>
 </p>
 <%= link_to 'Edit', edit_task_list_path(@task_list) %> |
 <%= link_to 'Back', task_lists_path %> |
