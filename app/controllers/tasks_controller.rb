@@ -60,6 +60,7 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
     respond_to do |format|
+      @task.task_list.touch
       format.html { redirect_to @task.task_list, notice: 'Task was successfully destroyed.' }
       format.json { head :no_content }
     end
