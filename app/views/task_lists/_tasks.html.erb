@@ -18,12 +18,12 @@
     <% @task_list.tasks.sort.each do |task| %>
       <tr>
         <td><%= link_to task.description, task %></td>
-        <td><%= task.status_task.humanize %></td>
+        <td><%= task.status.humanize %></td>
         <td align="center"><%= task.priority.humanize %></td>
         <td align="center"><%= task.type_taks %></td>
-        <td align= "center"><%= task.percentage_of_completion_task %></td>
-        <td><%= task.start_at_task %></td>
-        <td><%= task.end_at_task %></td>
+        <td align= "center"><%= "#{task.percentage_of_completion} %" unless task.percentage_of_completion.nil? %></td>
+        <td><%= task.start_at.getlocal.strftime("%m/%d/%Y - %H:%M") unless task.start_at.nil? %></td>
+        <td><%= task.end_at.getlocal.strftime("%m/%d/%Y - %H:%M") unless task.end_at.nil? %></td>
         <td><%= link_to 'Edit', edit_task_path(task, @task_list) %></td>
         <td><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

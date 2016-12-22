@@ -6,7 +6,7 @@ class LongTask < Task
 			Task.model_name
 		end
 
-		def status_task
+		def status
       case percentage_of_completion
         when (1..99)
           "in progress"
@@ -15,18 +15,6 @@ class LongTask < Task
         when 100
           "done"
        end
-		end
-
-		def start_at_task
-			nil
-		end
-
-		def end_at_task
-			nil
-		end
-
-		def percentage_of_completion_task
-			"#{percentage_of_completion}%"
 		end
 
 		def type_taks
