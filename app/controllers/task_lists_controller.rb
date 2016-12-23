@@ -1,6 +1,6 @@
 class TaskListsController < ApplicationController
   before_action :set_task_list, only: [:show, :edit, :update, :destroy]
-  before_action :destroy_from_cookie, only: [:destroy]
+  after_action :destroy_from_cookie, only: [:destroy]
   before_action :list_ids, only: [:index, :new]
   after_action :save_in_cookie, only: [:create]
 
@@ -81,7 +81,6 @@ class TaskListsController < ApplicationController
       begin
         @task_list = TaskList.friendly.find(params[:id])
       rescue ActiveRecord::RecordNotFound
-        #raise ActionController::RoutingError.new('Not Found')
         redirect_to root_url, notice: 'Task List does not exist.'
       end
     end
@@ -92,11 +91,11 @@ class TaskListsController < ApplicationController
     end
 
     def save_in_cookie
-      cookies[@task_list.id] = @task_list.friendly_id
+      cookies[@task_list.id] = @task_list.friendly_id if @task_list.persisted?
     end
 
     def destroy_from_cookie
-      cookies.delete (@task_list.id)
+      cookies.delete (@task_list.id) if @task_list.destroyed?
     end
 
     def list_ids

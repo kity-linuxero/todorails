@@ -12,7 +12,7 @@
 
 <p>
   <strong>Task list:</strong>
-  <%= @task.task_list.name %>
+  <%= link_to @task.task_list.name, @task.task_list %>
 </p>
 
 <p>
@@ -27,14 +27,14 @@
 
 <p>
   <strong>Status:</strong>
-  <%= @task.status_task.humanize %>
+  <%= @task.status.humanize %>
 </p>
 
 <% if @task.type == "LongTask" %>
 <p>
 
 
-<div class="text-xs " id="example-caption-2">Percentage of completion: <%= @task.percentage_of_completion %>%</div>
+<div class="text-xs " id="example-caption-2">Percentage of completion: <%= @task.percentage_of_completion %> %</div>
 <progress class="progress progress-primary" value=<%= @task.percentage_of_completion %> max="100" aria-describedby="example-caption-2"></progress>
 </p>
 <% end %>

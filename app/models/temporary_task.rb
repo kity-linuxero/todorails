@@ -11,24 +11,12 @@ class TemporaryTask < Task
 			Task.model_name
 		end
 
-		def status_task
+		def status
 			if end_at < Time.now
 			"expired"
 		else
-			status
+			super
 		end
-	end
-
-	def start_at_task
-		start_at.getlocal.strftime("%m/%d/%Y - %H:%M")
-	end
-
-	def end_at_task
-		end_at.getlocal.strftime("%m/%d/%Y - %H:%M")
-	end
-
-	def percentage_of_completion_task
-		nil
 	end
 
 	def type_taks
