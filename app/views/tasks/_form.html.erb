@@ -45,7 +45,7 @@
 
     <div class="form-group" style='max-width:600px'>
     <%= f.label :priority%>
-    <%= f.select(:priority, [['High','high'], ['Medium','medium'], ['Low','low']], {}, class: "form-control") %>
+    <%= f.select(:priority, [['High','high'], ['Medium','medium'], ['Low','low']], {}, class: "form-control", :required => true) %>
     <small class="form-text text-muted">High, Medium or Low</small>
 
   </div>
