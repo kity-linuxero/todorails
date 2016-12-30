@@ -48,20 +48,6 @@ class TaskTest < ActiveSupport::TestCase
     assert one.save # Good!
    end
 
-   # Una TemporaryTask se pasa a expired explícitamente
-   test "A TemporaryTask switch to expired, should be invalid to save" do
-     one = TemporaryTask.new do |t|
-       t.description= "A new TemporaryTask"
-       t.status= "pending"
-       t.priority= "medium"
-       t.start_at= Time.now
-       t.end_at= 5.minutes.from_now
-     end
-     assert one.save # Good!
-     one.status= "expired"
-     assert_not one.save # Boom!
-   end
-
    # Una tarea expirada cambia de fecha de expiración
    test "A TemporaryTask task expired change end_at" do
      one = TemporaryTask.new do |t|
