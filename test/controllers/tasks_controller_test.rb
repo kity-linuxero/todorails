@@ -14,7 +14,7 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
       assert_difference('Task.count') do
         post task_list_tasks_url(@task.task_list_id), params: { task: { description: @task.description, end_at: @task.end_at, percentage_of_completion: @task.percentage_of_completion, priority: @task.priority, start_at: @task.start_at, status: @task.status, task_list_id: @task.task_list_id, type: @task.type } }
       end
-      assert_redirected_to task_list_url(@task.task_list_id)
+      assert_redirected_to task_list_url(@task.task_list.friendly_id)
   end
 
   test "should show task" do
@@ -29,14 +29,14 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
 
   test "should update task" do
     patch task_url(@task), params: { task: { description: @task.description, end_at: @task.end_at, percentage_of_completion: @task.percentage_of_completion, priority: @task.priority, start_at: @task.start_at, status: @task.status, task_list_id: @task.task_list_id, type: @task.type } }
-    assert_redirected_to task_list_url(@task.task_list_id)
+    assert_redirected_to task_list_url(@task.task_list.friendly_id)
   end
 
   test "should destroy task" do
     assert_difference('Task.count', -1) do
       delete task_url(@task)
     end
-    assert_redirected_to task_list_url(@task.task_list_id)
+    assert_redirected_to task_list_url(@task.task_list.friendly_id)
   end
 
 end
