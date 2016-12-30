@@ -48,20 +48,6 @@ class TaskTest < ActiveSupport::TestCase
     assert one.save # Good!
    end
 
-   # Una TemporaryTask se pasa a expired explícitamente
-   test "A TemporaryTask switch to expired, should be invalid to save" do
-     one = TemporaryTask.new do |t|
-       t.description= "A new TemporaryTask"
-       t.status= "pending"
-       t.priority= "medium"
-       t.start_at= Time.now
-       t.end_at= 5.minutes.from_now
-     end
-     assert one.save # Good!
-     one.status= "expired"
-     assert_not one.save # Boom!
-   end
-
    # Una tarea expirada cambia de fecha de expiración
    test "A TemporaryTask task expired change end_at" do
      one = TemporaryTask.new do |t|
@@ -72,10 +58,10 @@ class TaskTest < ActiveSupport::TestCase
        t.end_at= 5.minutes.ago
      end
      assert one.save # Good!
-     assert (one.status_task == "expired") # Should be "expired"
+     assert (one.status == "expired") # Should be "expired"
      one.end_at = 5.minutes.from_now
      assert one.save
-     assert (one.status_task =="pending") # Should be "pending"
+     assert (one.status =="pending") # Should be "pending"
    end
 
    # La creación de una tarea temporal con un rango de validez invertido (fecha de inicio mayor a fecha de fin).
@@ -113,11 +99,11 @@ class TaskTest < ActiveSupport::TestCase
        t.percentage_of_completion= 0
      end
      assert one.save
-     assert (one.status_task == "pending")
+     assert (one.status == "pending")
      one.percentage_of_completion = 1
-     assert (one.status_task == "in progress")
+     assert (one.status == "in progress")
      one.percentage_of_completion = 100
-     assert (one.status_task == "done")
+     assert (one.status == "done")
    end
 
    # Ordenamiento de tareas: De diferentes tipos, con diferentes prioridades.
