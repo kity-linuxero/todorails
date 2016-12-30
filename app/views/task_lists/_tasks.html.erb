@@ -10,7 +10,7 @@
       <th>Completed</th>
       <th>Start at</th>
       <th>End at</th>
-      <th colspan="2" width="5%"></th>
+      <th colspan="2" style="width: 5%;"></th>
     </tr>
   </thead>
 
@@ -19,9 +19,9 @@
       <tr>
         <td><%= link_to task.description, task %></td>
         <td><%= task.status.humanize %></td>
-        <td style="text-align: center;"><%= task.priority.humanize %></td>
-        <td style="text-align: center;"><%= task.type_taks %></td>
-        <td style="text-align: center;"><%= "#{task.percentage_of_completion} %" if task.instance_of? LongTask %></td>
+        <td class="center_text"><%= task.priority.humanize %></td>
+        <td class="center_text"><%= task.type_taks %></td>
+        <td class="center_text"><%= "#{task.percentage_of_completion} %" if task.instance_of? LongTask %></td>
         <td><%= task.start_at.getlocal.strftime("%m/%d/%Y - %H:%M") if task.instance_of? TemporaryTask %></td>
         <td><%= task.end_at.getlocal.strftime("%m/%d/%Y - %H:%M") if task.instance_of? TemporaryTask %></td>
         <td><%= link_to 'Edit', edit_task_path(task, @task_list) %></td>

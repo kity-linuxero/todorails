@@ -31,12 +31,8 @@
 </p>
 
 <% if @task.type == "LongTask" %>
-<p>
-
-
 <div class="text-xs " id="example-caption-2">Percentage of completion: <%= @task.percentage_of_completion %> %</div>
 <progress class="progress progress-primary" style="max-width: 720px;" value=<%= @task.percentage_of_completion %> max="100" ></progress>
-</p>
 <% end %>
 
 <% if @task.type == "TemporaryTask" %>

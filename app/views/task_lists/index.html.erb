@@ -7,10 +7,10 @@
   <thead class="thead-default">
     <tr>
       <th>Name</th>
-      <th width="8%">Created at</th>
-      <th width="8%">Modifier at</th>
-      <th align="center" width="8%">Tasks</th>
-      <th colspan="2" width="5%"></th>
+      <th style="width: 8%;">Created at</th>
+      <th style="width: 8%;">Modifier at</th>
+      <th class="center_text" style="width: 8%;">Tasks</th>
+      <th colspan="2" style="width: 5%;"></th>
     </tr>
   </thead>
 
@@ -20,7 +20,7 @@
         <td><%= link_to task_list.name, task_list %></td>
         <td><%= task_list.created_at.getlocal.strftime("%m/%d/%Y")%></td>
         <td><%= task_list.updated_at.getlocal.strftime("%m/%d/%Y")%></td>
-        <td align="center"><%= task_list.tasks.count%></td>
+        <td class="center_text"><%= task_list.tasks.count%></td>
         <td><%= link_to 'Edit', edit_task_list_path(task_list) %></td>
         <td><%= link_to 'Delete', task_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -30,7 +30,7 @@
 </div>
 <% else %>
   <div class="alert alert-warning" role="alert">
-    <strong>No tasks list in this session!</strong> Clic in "New Task List" to create one</a>.
+    <strong>No tasks list in this session!</strong> Clic in "New Task List" to create one.
   </div>
 <%end %>
 <br>

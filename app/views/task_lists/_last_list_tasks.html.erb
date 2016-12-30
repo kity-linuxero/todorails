@@ -1,23 +1,13 @@
 <hr>
 <br>
-
 <div class="col-xl-5">
-  <h4 >Last task lists</h4>
-
-
-
-<ul class="list-group">
+  <h4 >Latest task lists</h4>
+<div class="list-group">
   <% @last_list_tasks.each do |task_list| %>
-
   <a href= <%= task_list_url(task_list) %> class="list-group-item list-group-item-action">
-
       <span class="tag tag-default tag-pill float-xs-right"><%= task_list.tasks.count %></span>
       <%= task_list.name %>
-
     </a>
-
-
   <% end %>
-</ul>
-
+</div>
 </div>
