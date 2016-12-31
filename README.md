@@ -1,4 +1,4 @@
-# TODO-Rails
+# TODO-Rails [![Build Status](https://travis-ci.org/kity-linuxero/todorails.svg?branch=master)](https://travis-ci.org/kity-linuxero/todorails)
 
 TODO-Rails es una aplicación desarrollada con Ruby on Rails 5.0.1 como trabajo integrador de la materia Taller de Tecnologías de producción de Software opción Lenguaje Ruby (cursada 2016) de la Universidad Nacional de La Plata.
 
@@ -26,7 +26,7 @@ TODO-Rails está online en HEROKU para que lo puedas usar y probar.
   $ ruby --version
   ruby 2.3.1p112 (2016-04-26) [x86_64-linux-gnu]
   ```
-  
+
 * Bundler (Instrucciones a continuación)
 * Rails 5.0 (Instrucciones a continuación)
 
@@ -43,7 +43,7 @@ Una vez instalado Ruby,
   ```bash
     $ sudo apt-get install git
     ```
-  
+
 ### Gemas:
 * Bundler:
 ```bash
@@ -54,7 +54,7 @@ Una vez instalado Ruby,
   $ bundle install
   ```
   * Para este último comando, se debe estar ubicado sobre el directorio donde se copió el repositorio.
-  
+
 ### Preparar base de datos:
 TODO-Rails provee de datos pre-cargados (seeds) para poder probar el software sin necesidad de tener que cargar numerosas entradas.
 
@@ -97,9 +97,9 @@ Puedes correr los Unit Test para esta aplicación.
  ```
 
 # Conceptos básicos
- 
+
 ## Tareas (Tasks)
-Son simplemente tareas o ítems a realizar. Las tareas pueden ser: 
+Son simplemente tareas o ítems a realizar. Las tareas pueden ser:
 * Simples (Simple Task)
 * Largas (Long Task)
 * Temporarias (Temporary Task)
@@ -163,4 +163,4 @@ Dentro de la página de una Task List, por ejemplo [http://localhost:3000/task_l
 
 > Nota: Los campos que sean llenados y que no pertenecen al tipo de la Task seleccionada serán ignorados. Por ejemplo, en una Simple Task se ignorarán el 'Percentage of completion' y el rango de fechas start at y end at.
 
-> Una vez creada una Taks NO PODRÁ CAMBIARSE el type (tipo) de tarea. Sin embargo se podrán modificar 'edit' todos los demás atributos de la misma. 
+> Una vez creada una Taks NO PODRÁ CAMBIARSE el type (tipo) de tarea. Sin embargo se podrán modificar 'edit' todos los demás atributos de la misma.
