@@ -4,12 +4,12 @@
   <thead class="thead-inverse">
     <tr>
       <th>Description</th>
-      <th>Status</th>
-      <th>Priority</th>
-      <th>Type of Task</th>
-      <th>Completed</th>
-      <th>Start at</th>
-      <th>End at</th>
+      <th class="center_text">Status</th>
+      <th class="center_text">Priority</th>
+      <th class="center_text">Type of Task</th>
+      <th class="center_text">Completed</th>
+      <th class="center_text">Start at</th>
+      <th class="center_text">End at</th>
       <th colspan="2" style="width: 5%;"></th>
     </tr>
   </thead>
@@ -18,12 +18,12 @@
     <% @task_list.tasks.sort.each do |task| %>
       <tr>
         <td><%= link_to task.description, task %></td>
-        <td><%= task.status.humanize %></td>
+        <td class="center_text"><%= task.status.humanize %></td>
         <td class="center_text"><%= task.priority.humanize %></td>
         <td class="center_text"><%= task.type_taks %></td>
         <td class="center_text"><%= "#{task.percentage_of_completion} %" if task.instance_of? LongTask %></td>
-        <td><%= task.start_at.getlocal.strftime("%m/%d/%Y - %H:%M") if task.instance_of? TemporaryTask %></td>
-        <td><%= task.end_at.getlocal.strftime("%m/%d/%Y - %H:%M") if task.instance_of? TemporaryTask %></td>
+        <td class="center_text"><%= task.start_at.getlocal.strftime("%m/%d/%Y - %H:%M") if task.instance_of? TemporaryTask %></td>
+        <td class="center_text"><%= task.end_at.getlocal.strftime("%m/%d/%Y - %H:%M") if task.instance_of? TemporaryTask %></td>
         <td><%= link_to 'Edit', edit_task_path(task, @task_list) %></td>
         <td><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
