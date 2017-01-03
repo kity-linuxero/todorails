@@ -24,7 +24,7 @@
         <td class="center_text"><%= "#{task.percentage_of_completion} %" if task.instance_of? LongTask %></td>
         <td class="center_text"><%= task.start_at.getlocal.strftime("%m/%d/%Y - %H:%M") if task.instance_of? TemporaryTask %></td>
         <td class="center_text"><%= task.end_at.getlocal.strftime("%m/%d/%Y - %H:%M") if task.instance_of? TemporaryTask %></td>
-        <td><%= link_to 'Edit', edit_task_path(task, @task_list) %></td>
+        <td><%= link_to 'Edit', edit_task_path(task, @task_list, locale: I18n.locale) %></td>
         <td><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
