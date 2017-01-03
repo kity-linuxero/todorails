@@ -1,14 +1,14 @@
 <%= render 'layouts/notice' %>
 <% unless @task_lists.nil? or @task_lists.empty? %>
-<h3>All my task lists:</h3>
+<h3><%= t('application.all_my_task_list')%>:</h3>
 
 <div class="table-responsive">
 <table class="table table-sm" >
   <thead class="thead-default">
     <tr>
-      <th>Name</th>
-      <th style="width: 8%;">Created at</th>
-      <th style="width: 8%;">Modifier at</th>
+      <th><%= t 'task_list.name'%></th>
+      <th style="width: 10%;"><%= t 'task_list.created_at'%></th>
+      <th style="width: 10%;"><%= t 'task_list.modified_at'%></th>
       <th class="center_text" style="width: 8%;">Tasks</th>
       <th colspan="2" style="width: 5%;"></th>
     </tr>
@@ -18,8 +18,8 @@
     <% @task_lists.each do |task_list| %>
       <tr>
         <td><%= link_to task_list.name, task_list %></td>
-        <td><%= task_list.created_at.getlocal.strftime("%m/%d/%Y")%></td>
-        <td><%= task_list.updated_at.getlocal.strftime("%m/%d/%Y")%></td>
+        <td><%= l task_list.created_at.getlocal.to_date, format: :short %></td>
+        <td><%= l task_list.updated_at.getlocal.to_date, format: :short %></td>
         <td class="center_text"><%= task_list.tasks.count%></td>
         <td><%= link_to 'Edit', edit_task_list_path(task_list) %></td>
         <td><%= link_to 'Delete', task_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>

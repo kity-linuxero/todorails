@@ -3,13 +3,13 @@
 <table class="table table-striped table-sm ">
   <thead class="thead-inverse">
     <tr>
-      <th>Description</th>
-      <th class="center_text">Status</th>
-      <th class="center_text">Priority</th>
-      <th class="center_text">Type of Task</th>
+      <th><%= t 'task.description'%></th>
+      <th class="center_text"><%= t 'task.status.status'%></th>
+      <th class="center_text"><%= t 'task.priority.priority'%></th>
+      <th class="center_text"><%= t 'task.type_of_task'%></th>
       <th class="center_text">Completed</th>
-      <th class="center_text">Start at</th>
-      <th class="center_text">End at</th>
+      <th class="center_text"><%= t 'task.start_at'%></th>
+      <th class="center_text"><%= t 'task.end_at'%></th>
       <th colspan="2" style="width: 5%;"></th>
     </tr>
   </thead>
@@ -22,8 +22,8 @@
         <td class="center_text"><%= task.priority.humanize %></td>
         <td class="center_text"><%= task.type_taks %></td>
         <td class="center_text"><%= "#{task.percentage_of_completion} %" if task.instance_of? LongTask %></td>
-        <td class="center_text"><%= task.start_at.getlocal.strftime("%m/%d/%Y - %H:%M") if task.instance_of? TemporaryTask %></td>
-        <td class="center_text"><%= task.end_at.getlocal.strftime("%m/%d/%Y - %H:%M") if task.instance_of? TemporaryTask %></td>
+        <td class="center_text"><%= l task.start_at.to_date, format: :default if task.instance_of? TemporaryTask %></td>
+        <td class="center_text"><%= l task.end_at.to_date, format: :default if task.instance_of? TemporaryTask %></td>
         <td><%= link_to 'Edit', edit_task_path(task, @task_list, locale: I18n.locale) %></td>
         <td><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

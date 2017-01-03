@@ -4,11 +4,11 @@
 
 
 <p>
-<strong>Created at: </strong>
-<%= @task_list.created_at.getlocal.strftime("%m/%d/%Y - %H:%M") %>
+<strong><%= t 'task_list.created_at'%>: </strong>
+<%= l @task_list.created_at.getlocal, format: :short %>
  -
-<strong>Modified at: </strong>
-<%= @task_list.updated_at.getlocal.strftime("%m/%d/%Y - %H:%M") %>
+<strong><%= t 'task_list.modified_at'%>: </strong>
+<%= l @task_list.updated_at.getlocal, format: :short %>
 </p>
 <%= link_to 'Edit', edit_task_list_path(@task_list) %> |
 <%= link_to 'Back', task_lists_path %> |

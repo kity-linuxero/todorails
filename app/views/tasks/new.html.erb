@@ -1,4 +1,4 @@
-<h3>New Task for <%= @task_list.name %> </h3>
+<h3><%= t 'task.new_task_for'%> <%= @task_list.name %> </h3>
 <hr>
 <%= render 'form', task: @task, task_list: @task_list %>
 

@@ -6,45 +6,45 @@
 <hr>
 
 <p>
-  <strong>Created at:</strong>
-  <%= @task.created_at.getlocal.strftime("%d/%m/%Y - %H:%M") %>
+  <strong><%= t 'task.created_at'%>:</strong>
+  <%= l @task.created_at.getlocal, format: :long %>
 </p>
 
 <p>
-  <strong>Task list:</strong>
+  <strong><%= t 'task.task_list'%>:</strong>
   <%= link_to @task.task_list.name, @task.task_list %>
 </p>
 
 <p>
-  <strong>Type of task:</strong>
+  <strong><%= t 'task.type_of_task'%>:</strong>
   <%= @task.type_taks %>
 </p>
 
 <p>
-  <strong>Priority:</strong>
+  <strong><%= t 'task.priority.priority'%>:</strong>
   <%= @task.priority.humanize %>
 </p>
 
 <p>
-  <strong>Status:</strong>
+  <strong><%= t 'task.status.status'%>:</strong>
   <%= @task.status.humanize %>
 </p>
 
 <% if @task.type == "LongTask" %>
-<div class="text-xs " id="example-caption-2">Percentage of completion: <%= @task.percentage_of_completion %> %</div>
+<div class="text-xs " id="example-caption-2"><%= t 'task.percentage_of_completion'%>: <%= @task.percentage_of_completion %> %</div>
 <progress class="progress progress-primary" style="max-width: 720px;" value=<%= @task.percentage_of_completion %> max="100" ></progress>
 <% end %>
 
 <% if @task.type == "TemporaryTask" %>
 
 <p>
-  <strong>Start at:</strong>
-  <%= @task.start_at.getlocal.strftime("%d/%m/%Y - %H:%M") %>
+  <strong><%= t 'task.start_at'%>:</strong>
+  <%= l @task.start_at.getlocal, format: :long %>
 </p>
 
 <p>
-  <strong>End at:</strong>
-  <%= @task.end_at.getlocal.strftime("%d/%m/%Y - %H:%M") %>
+  <strong><%= t 'task.end_at'%>:</strong>
+  <%= l @task.end_at.getlocal, format: :long %>
 </p>
 
 <% end %>

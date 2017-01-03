@@ -26,8 +26,14 @@ en:
     about: "About"
     edit: "Edit"
     delete: "Delete"
+    back: "Back"
+    show: "Show"
+    all_my_task_list: "All my task lists"
 
   task_list:
+    name: "Name"
+    modified_at: "Modified at"
+    created_at: "Created at"
     new:
       tittle: "New Task List"
       placeholder: "Write a name for new task list"
@@ -36,6 +42,27 @@ en:
     index:
       tittle: "All my task list"
 
+  task:
+    editing_task: "Editing Task"
+    new_task_for: "New Task for"
+    created_at: "Created at"
+    task_list: "Task list"
+    type_of_task: "Type of task"
+    priority:
+      priority: "Priority"
+      low: "Low"
+      medium: "Medium"
+      high: "High"
+    status:
+      status: "Status"
+      done: "Done"
+      pending: "Pending"
+      expired: "Expired"
+      in_progress: "In progress"
+    percentage_of_completion: "Percentage of completion"
+    start_at: "Start at"
+    end_at: "End at"
+    description: "Description"
 
   activerecord:
     errors:

@@ -5,8 +5,14 @@ es:
     about: "Acerca de"
     edit: "Editar"
     delete: "Eliminar"
+    back: "Back"
+    show: "Show"
+    all_my_task_list: "Todas mis listas"
 
   task_list:
+    name: "Nombre"
+    modified_at: "Modificado"
+    created_at: "Creado"
     new:
       tittle: "Nueva lista de tareas"
       placeholder: "Escriba un nombre para la lista de tareas"
@@ -15,7 +21,39 @@ es:
     index:
       tittle: "Todas mis listas de tareas"
 
+  task:
+    editing_task: "Editar tarea"
+    new_task_for: "Nueva tarea para"
+    created_at: "Fecha de creación"
+    task_list: "Lista de tareas"
+    type_of_task: "Tipo de tarea"
+    priority:
+      priority: "Prioridad"
+      low: "Baja"
+      medium: "Media"
+      high: "Alta"
+    status:
+      status: "Estado"
+      done: "Hecho"
+      pending: "Pendiente"
+      expired: "Expirada"
+      in_progress: "En progreso"
+    percentage_of_completion: "Porcentaje completado"
+    start_at: "Comienzo"
+    end_at: "Finalización"
+    description: "Descripción"
+
+
   activerecord:
+    attributes:
+      task:
+        description: "Descripción"
+        status: "Estado"
+        type: "Tipo"
+        priority: "Prioridad"
+        percentage_of_completion: "Porcentaje completado"
+        start_at: "Comienzo"
+        end_at: "Finalización"
     errors:
       messages:
         record_invalid: "La validación falló: %{errors}"

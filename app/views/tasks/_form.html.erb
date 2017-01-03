@@ -14,11 +14,8 @@
   <% end %>
 
 <% unless task.type.nil?%>
-  <div class="form-group row">
-    <label class="col-xs-1 col-form-label">Type:</label>
-    <div class="col-xs-5">
-      <p class="form-control-static mb-0"><%= task.type %></p>
-    </div>
+  <div class="form-group">
+    <label class="col-form-label"><%= f.label :type %>: <%= task.type %></label>
   </div>
 <% end %>
 
@@ -52,10 +49,10 @@
 
 <% if task.type.nil? || task.type == "LongTask" %>
   <div class="form-group" style='max-width:600px'>
-    <%= f.label 'complete'%>
+    <%= f.label :percentage_of_completion%>
    <div class="input-group">
      <div class="input-group-addon">%</div>
-      <%= f.number_field :percentage_of_completion, class: "form-control", in: 0..100, placeholder: "Percentage of completion" %>
+      <%= f.number_field :percentage_of_completion, class: "form-control", in: 0..100, placeholder: "0-100%" %>
     </div>
     <% if task.type.nil? %>
     <small class="form-text text-muted">Only for Long Tasks</small>
