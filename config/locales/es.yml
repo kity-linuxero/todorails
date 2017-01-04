@@ -7,10 +7,25 @@ es:
     delete: "Eliminar"
     back: "Atrás"
     show: "Detalles"
+    new_task: "Nueva Tarea"
     all_my_task_list: "Todas mis listas"
     confirmation: "¿Estás seguro?"
+    controller:
+      set_task_list: "La lista de tareas no existe."
+      task:
+        create: "La tarea ha sido creada satisfactoriamente."
+        update: "La tarea ha sido actualizada satisfactoriamente."
+        destroy: "La tarea ha sido eliminada satisfactoriamente."
+        set_task: "La tarea no existe."
+      task_list:
+        create: "La lista de tareas ha sido creada satisfactoriamente."
+        update: "La lista de tareas ha sido actualizada satisfactoriamente."
+        destroy: "La lista de tareas ha sido eliminada satisfactoriamente."
 
   task_list:
+    editing: "Editar lista"
+    no_tasks: "¡No hay tareas!"
+    no_tasks_text: "Para crear una haga clic en "
     name: "Nombre"
     modified_at: "Modificado"
     created_at: "Creado"
@@ -22,6 +37,8 @@ es:
       latest: "Últimas listas"
     index:
       tittle: "Todas mis listas de tareas"
+      no_task_lists: "¡No hay lista de tareas en esta sesión!"
+      no_task_lists_text: "Para crear una lista, clic en "
     tasks: "Tareas"
 
   task:

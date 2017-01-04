@@ -17,14 +17,14 @@
 <hr>
 
 <div style="float: right;">
-<%= button_to 'New Task', new_task_list_task_path(@task_list, @task, locale: I18n.locale), method: :get, class: 'btn btn-outline-primary'%>
+<%= link_to t('application.new_task'), new_task_list_task_path(@task_list, @task, locale: I18n.locale), method: :get, class: 'btn btn-outline-primary'%>
 </div>
 
 <% if @task_list.tasks.empty? %>
 <br><br>
   <div class="alert alert-success" role="alert">
 
-  <strong>No tasks!</strong> Clic in "New Task" to create one.
+  <strong><%=t('task_list.no_tasks')%></strong> <%=t('task_list.no_tasks_text')%> <%=t('application.new_task')%>
 </div>
 <% else %>
 <%= render 'tasks' %>

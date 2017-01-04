@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - Travis CI integration
+- Locales config (english, spanish availables)
 
 ### Fixed
 - json views

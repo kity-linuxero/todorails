@@ -28,10 +28,25 @@ en:
     delete: "Delete"
     back: "Back"
     show: "Show"
+    new_task: "New Task"
     all_my_task_list: "All my task lists"
     confirmation: "Are you sure?"
+    controller:
+      set_task_list: "Task List does not exist."
+      task:
+        create: "Task was successfully created."
+        update: "Task was successfully updated."
+        destroy: "Task was successfully destroyed."
+        set_task: "Task does not exist."
+      task_list:
+        create: "Task List was successfully created."
+        update: "Task List was successfully updated."
+        destroy: "Task List was successfully destroyed."
 
   task_list:
+    editing: "Editing Task List"
+    no_tasks: "No tasks!"
+    no_tasks_text: "To create one clic in "
     name: "Name"
     modified_at: "Modified at"
     created_at: "Created at"
@@ -42,6 +57,8 @@ en:
       latest: "Latest task lists"
     index:
       tittle: "All my task list"
+      no_task_lists: "No tasks list in this session!"
+      no_task_lists_text: "To create one clic in "
     tasks: "Tasks"
 
   task:

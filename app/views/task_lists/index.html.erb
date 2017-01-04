@@ -30,7 +30,7 @@
 </div>
 <% else %>
   <div class="alert alert-warning" role="alert">
-    <strong>No tasks list in this session!</strong> Clic in "New Task List" to create one.
+    <strong><%= t('task_list.index.no_task_lists') %></strong> <%= t('task_list.index.no_task_lists_text') %> <%= t('task_list.new.tittle') %>
   </div>
 <%end %>
 <br>
