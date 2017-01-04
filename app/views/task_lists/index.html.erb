@@ -9,7 +9,7 @@
       <th><%= t 'task_list.name'%></th>
       <th style="width: 10%;"><%= t 'task_list.created_at'%></th>
       <th style="width: 10%;"><%= t 'task_list.modified_at'%></th>
-      <th class="center_text" style="width: 8%;">Tasks</th>
+      <th class="center_text" style="width: 8%;"><%=t('task_list.tasks')%></th>
       <th colspan="2" style="width: 5%;"></th>
     </tr>
   </thead>
@@ -21,8 +21,8 @@
         <td><%= l task_list.created_at.getlocal.to_date, format: :short %></td>
         <td><%= l task_list.updated_at.getlocal.to_date, format: :short %></td>
         <td class="center_text"><%= task_list.tasks.count%></td>
-        <td><%= link_to 'Edit', edit_task_list_path(task_list) %></td>
-        <td><%= link_to 'Delete', task_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('application.edit'), edit_task_list_path(task_list) %></td>
+        <td><%= link_to t('application.delete'), task_list, method: :delete, data: { confirm: t('application.confirmation') } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
   </div>
 <%end %>
 <br>
-<%= link_to 'New Task List', root_url %>
+<%= link_to t('task_list.new.tittle'), root_url %>

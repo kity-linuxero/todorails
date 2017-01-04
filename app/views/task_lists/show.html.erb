@@ -10,9 +10,9 @@
 <strong><%= t 'task_list.modified_at'%>: </strong>
 <%= l @task_list.updated_at.getlocal, format: :short %>
 </p>
-<%= link_to 'Edit', edit_task_list_path(@task_list) %> |
-<%= link_to 'Back', task_lists_path %> |
-<%= link_to 'Delete', @task_list, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to t('application.edit'), edit_task_list_path(@task_list) %> |
+<%= link_to t('application.back'), task_lists_path %> |
+<%= link_to t('application.delete'), @task_list, method: :delete, data: { confirm: t('application.confirmation') } %>
 
 <hr>
 

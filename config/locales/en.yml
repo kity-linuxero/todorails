@@ -29,6 +29,7 @@ en:
     back: "Back"
     show: "Show"
     all_my_task_list: "All my task lists"
+    confirmation: "Are you sure?"
 
   task_list:
     name: "Name"
@@ -41,6 +42,7 @@ en:
       latest: "Latest task lists"
     index:
       tittle: "All my task list"
+    tasks: "Tasks"
 
   task:
     editing_task: "Editing Task"
