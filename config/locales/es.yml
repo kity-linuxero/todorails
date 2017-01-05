@@ -2,6 +2,7 @@ es:
   hello: "Hola a todos"
 
   application:
+    language: "Idioma"
     about: "Acerca de"
     edit: "Editar"
     delete: "Eliminar"

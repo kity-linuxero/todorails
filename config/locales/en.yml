@@ -23,6 +23,7 @@ en:
   hello: "Hello world"
 
   application:
+    language: "Language"
     about: "About"
     edit: "Edit"
     delete: "Delete"
