@@ -47,6 +47,7 @@ es:
     created_at: "Fecha de creación"
     task_list: "Lista de tareas"
     type_of_task: "Tipo de tarea"
+    completed: "Completado"
     priority:
       priority: "Prioridad"
       low: "Baja"

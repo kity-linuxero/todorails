@@ -67,6 +67,7 @@ en:
     created_at: "Created at"
     task_list: "Task list"
     type_of_task: "Type of task"
+    completed: "Completed"
     priority:
       priority: "Priority"
       low: "Low"

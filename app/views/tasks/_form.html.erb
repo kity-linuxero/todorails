@@ -35,14 +35,14 @@
   <% unless task.type =="LongTask" %>
   <div class="form-group" style='max-width:600px'>
     <%= f.label :status %>
-    <%= f.select(:status, [['Pending','pending'], ['Done','done']], {}, class: "form-control") %>
+    <%= f.select(:status, [[t('task.status.pending'),'pending'], [t('task.status.done'),'done']], {}, class: "form-control") %>
     <small class="form-text text-muted">Pending (default) or Done</small>
   </div>
   <% end %>
 
     <div class="form-group" style='max-width:600px'>
     <%= f.label :priority%>
-    <%= f.select(:priority, [['High','high'], ['Medium','medium'], ['Low','low']], {}, class: "form-control", :required => true) %>
+    <%= f.select(:priority, [[t('task.priority.high'),'high'], [t('task.priority.medium'),'medium'], [t('task.priority.low'),'low']], {}, class: "form-control", :required => true) %>
     <small class="form-text text-muted">High, Medium or Low</small>
 
   </div>
@@ -78,7 +78,7 @@
 <% end %>
 
   <div class="actions">
-    <%= f.submit :Submit, class: "btn btn-success" %>
+    <%= f.submit t('task_list.new.submit'), class: "btn btn-success" %>
   </div>
 <br>
 <% end %>
