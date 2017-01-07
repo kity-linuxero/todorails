@@ -18,9 +18,9 @@
     <% @task_list.tasks.sort.each do |task| %>
       <tr>
         <td><%= link_to task.description, task %></td>
-        <td class="center_text"><%= task.status.humanize %></td>
-        <td class="center_text"><%= task.priority.humanize %></td>
-        <td class="center_text"><%= task.type_taks %></td>
+        <td class="center_text"><%= t("task.status.#{task.status}") %></td>
+        <td class="center_text"><%= t("task.priority.#{task.priority}") %></td>
+        <td class="center_text"><%= t("task.type.#{task.type}") %></td>
         <td class="center_text"><%= "#{task.percentage_of_completion} %" if task.instance_of? LongTask %></td>
         <td class="center_text"><%= l task.start_at.to_date, format: :default if task.instance_of? TemporaryTask %></td>
         <td class="center_text"><%= l task.end_at.to_date, format: :default if task.instance_of? TemporaryTask %></td>

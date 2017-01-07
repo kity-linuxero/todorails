@@ -68,6 +68,10 @@ en:
     created_at: "Created at"
     task_list: "Task list"
     type_of_task: "Type of task"
+    type:
+      SimpleTask: "Simple"
+      TemporaryTask: "Temporary"
+      LongTask: "Long"
     completed: "Completed"
     priority:
       priority: "Priority"

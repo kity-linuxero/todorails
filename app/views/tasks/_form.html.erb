@@ -27,24 +27,20 @@
 <% if task.type.nil? %>
   <div class="form-group" style='max-width:600px'>
     <%= f.label :type %>
-    <%= f.select(:type, [['Simple','SimpleTask'], ['Long','LongTask'], ['Temporary','TemporaryTask']], {}, class: "form-control") %>
-    <small class="form-text text-muted">Simple Task (default), Long Task or Temporary Task</small>
+    <%= f.select(:type, [[t('task.type.SimpleTask'),'SimpleTask'], [t('task.type.LongTask'),'LongTask'], [t('task.type.TemporaryTask'),'TemporaryTask']], {}, class: "form-control") %>
   </div>
 <% end %>
 
   <% unless task.type =="LongTask" %>
   <div class="form-group" style='max-width:600px'>
     <%= f.label :status %>
-    <%= f.select(:status, [[t('task.status.pending'),'pending'], [t('task.status.done'),'done']], {}, class: "form-control") %>
-    <small class="form-text text-muted">Pending (default) or Done</small>
+    <%= f.select(:status, [[t('task.status.pending'),'pending'], [t('task.status.done'),'done']], {}, class: "form-control", :required => true) %>
   </div>
   <% end %>
 
     <div class="form-group" style='max-width:600px'>
     <%= f.label :priority%>
     <%= f.select(:priority, [[t('task.priority.high'),'high'], [t('task.priority.medium'),'medium'], [t('task.priority.low'),'low']], {}, class: "form-control", :required => true) %>
-    <small class="form-text text-muted">High, Medium or Low</small>
-
   </div>
 
 <% if task.type.nil? || task.type == "LongTask" %>
