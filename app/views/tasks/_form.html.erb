@@ -34,7 +34,7 @@
   <% unless task.type =="LongTask" %>
   <div class="form-group" style='max-width:600px'>
     <%= f.label :status %>
-    <%= f.select(:status, [[t('task.status.pending'),'pending'], [t('task.status.done'),'done']], {}, class: "form-control", :required => true) %>
+    <%= f.select(:status, [[t('task.status.pending'),'pending'], [t('task.status.done'),'done']], {}, class: "form-control") %>
   </div>
   <% end %>
 
@@ -48,8 +48,7 @@
     <%= f.label :percentage_of_completion%>
    <div class="input-group">
      <div class="input-group-addon">%</div>
-      <%= f.number_field :percentage_of_completion, class: "form-control", in: 0..100, placeholder: "0-100%" %>
-    </div>
+      <%= f.number_field :percentage_of_completion, class: "form-control", in: 0..100, placeholder: "0-100%" %> </div>
     <% if task.type.nil? %>
     <small class="form-text text-muted">Only for Long Tasks</small>
     <% end %>
@@ -74,7 +73,7 @@
 <% end %>
 
   <div class="actions">
-    <%= f.submit t('task_list.new.submit'), class: "btn btn-success" %>
+    <%= f.submit :Submit, class: "btn btn-success" %>
   </div>
 <br>
 <% end %>
