@@ -31,7 +31,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.save
         @task.task_list.touch
-        format.html { redirect_to @task.task_list, notice: 'Task was successfully created.' }
+        format.html { redirect_to @task.task_list, notice: t('application.controller.task.create') }
         format.json { render :show, status: :created, location: @task }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.update(task_params)
         @task.task_list.touch
-        format.html { redirect_to @task.task_list, notice: 'Task was successfully updated.' }
+        format.html { redirect_to @task.task_list, notice: t('application.controller.task.update') }
         format.json { render :show, status: :ok, location: @task }
       else
         format.html { render :edit }
@@ -61,7 +61,7 @@ class TasksController < ApplicationController
     @task.destroy
     respond_to do |format|
       @task.task_list.touch
-      format.html { redirect_to @task.task_list, notice: 'Task was successfully destroyed.' }
+      format.html { redirect_to @task.task_list, notice: t('application.controller.task.destroy') }
       format.json { head :no_content }
     end
   end
@@ -72,7 +72,7 @@ class TasksController < ApplicationController
       begin
       @task = Task.find(params[:id])
       rescue ActiveRecord::RecordNotFound
-        redirect_to root_url, notice: 'Task does not exist.'
+        redirect_to root_url, notice: t('application.controller.task.set_task')
       end
     end
 
@@ -86,7 +86,7 @@ class TasksController < ApplicationController
       begin
         @task_list = TaskList.friendly.find(params[:task_list_id])
       rescue ActiveRecord::RecordNotFound
-        redirect_to root_url, notice: 'Task List does not exist.'
+        redirect_to root_url, notice: t('application.controller.set_task_list')
       end
     end
 
