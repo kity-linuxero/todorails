@@ -101,7 +101,7 @@ class TaskTest < ActiveSupport::TestCase
      assert one.save
      assert (one.status == "pending")
      one.percentage_of_completion = 1
-     assert (one.status == "in progress")
+     assert (one.status == "in_progress")
      one.percentage_of_completion = 100
      assert (one.status == "done")
    end

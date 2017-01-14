@@ -6,49 +6,49 @@
 <hr>
 
 <p>
-  <strong>Created at:</strong>
-  <%= @task.created_at.getlocal.strftime("%d/%m/%Y - %H:%M") %>
+  <strong><%= t 'task.created_at'%>:</strong>
+  <%= l @task.created_at.getlocal, format: :long %>
 </p>
 
 <p>
-  <strong>Task list:</strong>
+  <strong><%= t 'task.task_list'%>:</strong>
   <%= link_to @task.task_list.name, @task.task_list %>
 </p>
 
 <p>
-  <strong>Type of task:</strong>
-  <%= @task.type_taks %>
+  <strong><%= t 'task.type_of_task'%>:</strong>
+  <%= t("task.type.#{@task.type}") %>
 </p>
 
 <p>
-  <strong>Priority:</strong>
-  <%= @task.priority.humanize %>
+  <strong><%= t 'task.priority.priority'%>:</strong>
+  <%= t("task.priority.#{@task.priority}")  %>
 </p>
 
 <p>
-  <strong>Status:</strong>
-  <%= @task.status.humanize %>
+  <strong><%= t 'task.status.status'%>:</strong>
+  <%= t("task.status.#{@task.status}") %>
 </p>
 
-<% if @task.type == "LongTask" %>
-<div class="text-xs " id="example-caption-2">Percentage of completion: <%= @task.percentage_of_completion %> %</div>
+<% if @task.instance_of? LongTask %>
+<div class="text-xs " id="example-caption-2"><%= t 'task.percentage_of_completion'%>: <%= @task.percentage_of_completion %> %</div>
 <progress class="progress progress-primary" style="max-width: 720px;" value=<%= @task.percentage_of_completion %> max="100" ></progress>
 <% end %>
 
-<% if @task.type == "TemporaryTask" %>
+<% if @task.instance_of? TemporaryTask %>
 
 <p>
-  <strong>Start at:</strong>
-  <%= @task.start_at.getlocal.strftime("%d/%m/%Y - %H:%M") %>
+  <strong><%= t 'task.start_at'%>:</strong>
+  <%= l @task.start_at.getlocal, format: :long %>
 </p>
 
 <p>
-  <strong>End at:</strong>
-  <%= @task.end_at.getlocal.strftime("%d/%m/%Y - %H:%M") %>
+  <strong><%= t 'task.end_at'%>:</strong>
+  <%= l @task.end_at.getlocal, format: :long %>
 </p>
 
 <% end %>
 <hr>
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', @task.task_list %>
+<%= link_to t('application.edit'), edit_task_path(@task) %> |
+<%= link_to t('application.back'), @task.task_list %>
 </div>

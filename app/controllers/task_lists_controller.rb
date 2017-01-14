@@ -42,7 +42,7 @@ class TaskListsController < ApplicationController
 
     respond_to do |format|
       if @task_list.save
-        format.html { redirect_to @task_list, notice: 'Task list was successfully created.' }
+        format.html { redirect_to @task_list, notice: t('application.controller.task_list.create') }
         format.json { render :show, status: :created, location: @task_list }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class TaskListsController < ApplicationController
   def update
     respond_to do |format|
       if @task_list.update(task_list_params)
-        format.html { redirect_to @task_list, notice: 'Task list was successfully updated.' }
+        format.html { redirect_to @task_list, notice: t('application.controller.task_list.update') }
         format.json { render :show, status: :ok, location: @task_list }
       else
         format.html { render :edit }
@@ -70,7 +70,7 @@ class TaskListsController < ApplicationController
   def destroy
     @task_list.destroy
     respond_to do |format|
-      format.html { redirect_to task_lists_url, notice: 'Task list was successfully destroyed.' }
+      format.html { redirect_to task_lists_url, notice: t('application.controller.task_list.destroy') }
       format.json { head :no_content }
     end
   end
@@ -81,7 +81,7 @@ class TaskListsController < ApplicationController
       begin
         @task_list = TaskList.friendly.find(params[:id])
       rescue ActiveRecord::RecordNotFound
-        redirect_to root_url, notice: 'Task List does not exist.'
+        redirect_to root_url, notice: t('application.controller.set_task_list')
       end
     end
 

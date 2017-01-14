@@ -1,8 +1,8 @@
 <br>
-<h2 class="center_text">Editing Task List</h2>
+<h2 class="center_text"><%= t('task_list.editing')%></h2>
 <%= render 'form', task_list: @task_list %>
 <br>
 
-<%= link_to 'Show', @task_list %> |
-<%= link_to 'Back', task_lists_path %> |
-<%= link_to 'Delete', @task_list, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to t('application.show'), @task_list %> |
+<%= link_to t('application.back'), task_lists_path %> |
+<%= link_to t('application.delete'), @task_list, method: :delete, data: { confirm: t('application.confirmation') } %>

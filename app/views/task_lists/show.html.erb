@@ -4,27 +4,27 @@
 
 
 <p>
-<strong>Created at: </strong>
-<%= @task_list.created_at.getlocal.strftime("%m/%d/%Y - %H:%M") %>
+<strong><%= t 'task_list.created_at'%>: </strong>
+<%= l @task_list.created_at.getlocal, format: :short %>
  -
-<strong>Modified at: </strong>
-<%= @task_list.updated_at.getlocal.strftime("%m/%d/%Y - %H:%M") %>
+<strong><%= t 'task_list.modified_at'%>: </strong>
+<%= l @task_list.updated_at.getlocal, format: :short %>
 </p>
-<%= link_to 'Edit', edit_task_list_path(@task_list) %> |
-<%= link_to 'Back', task_lists_path %> |
-<%= link_to 'Delete', @task_list, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to t('application.edit'), edit_task_list_path(@task_list) %> |
+<%= link_to t('application.back'), task_lists_path %> |
+<%= link_to t('application.delete'), @task_list, method: :delete, data: { confirm: t('application.confirmation') } %>
 
 <hr>
 
 <div style="float: right;">
-<%= button_to 'New Task', new_task_list_task_path(@task_list, @task), method: :get, class: 'btn btn-outline-primary'%>
+<%= link_to t('application.new_task'), new_task_list_task_path(@task_list, @task, locale: I18n.locale), method: :get, class: 'btn btn-outline-primary'%>
 </div>
 
 <% if @task_list.tasks.empty? %>
 <br><br>
   <div class="alert alert-success" role="alert">
 
-  <strong>No tasks!</strong> Clic in "New Task" to create one.
+  <strong><%=t('task_list.no_tasks')%></strong> <%=t('task_list.no_tasks_text')%> <%=t('application.new_task')%>
 </div>
 <% else %>
 <%= render 'tasks' %>

@@ -6,8 +6,4 @@ class SimpleTask < Task
 		def self.model_name
     	Task.model_name
   	end
-
-		def type_taks
-			"Simple"
-		end
 end

@@ -1,6 +1,6 @@
-<h3>Editing Task</h3>
+<h3><%= t 'task.editing_task'%></h3>
 <hr>
 
 <%= render 'form', task: @task %>
 
-<%= link_to 'Back', @task.task_list %>
+<%= link_to t('application.back'), @task.task_list %>

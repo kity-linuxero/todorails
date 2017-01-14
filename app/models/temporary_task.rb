@@ -19,10 +19,6 @@ class TemporaryTask < Task
 		end
 	end
 
-	def type_taks
-		"Temporary"
-	end
-
 	private
 		def end_date_is_after_start_date
 		  if end_at < start_at
