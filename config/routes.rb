@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     root to: 'task_lists#new'
   end
-  match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), via: [:get, :post]
+# => Produce un loop:
+#  match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), via: [:get, :post]
   match '', to: redirect("/#{I18n.default_locale}"), via: [:get, :post]
 end

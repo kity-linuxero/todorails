@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - json views
 - MVC code fixes
+- Some routes that produced a loop 
 
 
 ## 1.1.0 : 2016-12-30
