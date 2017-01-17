@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [ Unreleased ]
+
+### Added
+- Improved forms.
+  - Change forms views depending on the type of task.
+  - ... with animations ;)
+- Tasks can change type. (experimental)
+
+
+### Fixed
+- Temporary forms bug when end date is after than start date.
+
+
 ## 1.2.0 : 2017-01-13
 
 ### Added
@@ -16,7 +29,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - json views
 - MVC code fixes
-- Some routes that produced a loop 
+- Some routes that produced a loop
 
 
 ## 1.1.0 : 2016-12-30
