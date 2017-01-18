@@ -13,48 +13,34 @@
     </div>
   <% end %>
 
-<% unless task.type.nil? || !task.errors.empty? %>
-  <div class="form-group">
-    <label class="col-form-label"><%= f.label :type %>: <%= task.type %></label>
-  </div>
-<% end %>
-
   <div class="form-group" style='max-width:600px' >
     <%= f.label :description %>
     <%= f.text_field :description, class: "form-control", :required => true %>
   </div>
 
-<% if task.type.nil? || !task.errors.empty? %>
   <div class="form-group" style='max-width:600px'>
     <%= f.label :type %>
     <%= f.select(:type, [[t('task.type.SimpleTask'),'SimpleTask'], [t('task.type.LongTask'),'LongTask'], [t('task.type.TemporaryTask'),'TemporaryTask']], {}, class: "form-control", id: "selects", onchange: "change()", :selected => task.type || 'SimpleTask') %>
   </div>
-<% end %>
 
-<% if task.type.nil? || task.type == "LongTask" %>
   <div class="form-group" style='max-width:600px' id="select_long">
     <%= f.label :percentage_of_completion%>
    <div class="input-group">
      <div class="input-group-addon">%</div>
-      <%= f.number_field :percentage_of_completion, class: "form-control", in: 0..100, placeholder: "0-100%", :required => true%> </div>
-    <% if task.type.nil? %>
-    <% end %>
+      <%= f.number_field :percentage_of_completion, class: "form-control", in: 0..100, placeholder: "0-100%", :required => true, value: task.percentage_of_completion || '0' %>
+   </div>
   </div>
-<% end %>
 
-  <% unless task.type =="LongTask" %>
   <div class="form-group" style='max-width:600px' id="select_status">
     <%= f.label :status %>
     <%= f.select(:status, [[t('task.status.pending'),'pending'], [t('task.status.done'),'done']], {}, class: "form-control") %>
   </div>
-  <% end %>
 
     <div class="form-group" style='max-width:600px'>
     <%= f.label :priority%>
     <%= f.select(:priority, [[t('task.priority.high'),'high'], [t('task.priority.medium'),'medium'], [t('task.priority.low'),'low']], {}, class: "form-control", :required => true) %>
   </div>
 
-<% if task.type.nil? || task.type == "TemporaryTask"%>
 <div class="card" style='max-width:600px' id= "select_temp">
   <div class="card-block">
     <p class="card-text">Temporary task: </p>
@@ -68,9 +54,14 @@
   </div>
   </div>
 </div>
-<% end %>
-<% if task.type.nil? %>
-  <script>simple_default()</script>
+
+<% case task.type %>
+  <% when "TemporaryTask" %>
+    <script>show_temporary_task()</script>
+  <% when "LongTask" %>
+    <script>show_long_task()</script>
+  <% else %>
+    <script>show_simple_task()</script>
 <% end %>
 
   <div class="actions">
