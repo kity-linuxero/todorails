@@ -9,7 +9,7 @@ es:
     back: "Atrás"
     show: "Detalles"
     new_task: "Nueva Tarea"
-    all_my_task_list: "Todas mis listas"
+    all_my_task_list: "Mis listas"
     confirmation: "¿Estás seguro?"
     controller:
       set_task_list: "La lista de tareas no existe."

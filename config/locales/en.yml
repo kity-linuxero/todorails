@@ -30,7 +30,7 @@ en:
     back: "Back"
     show: "Show"
     new_task: "New Task"
-    all_my_task_list: "All my task lists"
+    all_my_task_list: "My task lists"
     confirmation: "Are you sure?"
     controller:
       set_task_list: "Task List does not exist."

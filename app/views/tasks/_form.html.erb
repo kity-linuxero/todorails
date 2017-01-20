@@ -20,7 +20,7 @@
 
   <div class="form-group" style='max-width:600px'>
     <%= f.label :type %>
-    <%= f.select(:type, [[t('task.type.SimpleTask'),'SimpleTask'], [t('task.type.LongTask'),'LongTask'], [t('task.type.TemporaryTask'),'TemporaryTask']], {}, class: "form-control", id: "selects", onchange: "change()", :selected => task.type || 'SimpleTask') %>
+    <%= f.select(:type, [[t('task.type.SimpleTask'),'SimpleTask'], [t('task.type.LongTask'),'LongTask'], [t('task.type.TemporaryTask'),'TemporaryTask']], {}, class: "form-control", id: "selects", onchange: "change()") %>
   </div>
 
   <div class="form-group" style='max-width:600px' id="select_long">

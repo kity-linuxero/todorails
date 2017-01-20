@@ -4,7 +4,7 @@
 
 <div class="table-responsive">
 <table class="table table-sm" >
-  <thead class="thead-default">
+  <thead class="thead-inverse">
     <tr>
       <th><%= t 'task_list.name'%></th>
       <th style="width: 10%;"><%= t 'task_list.created_at'%></th>
@@ -33,5 +33,5 @@
     <strong><%= t('task_list.index.no_task_lists') %></strong> <%= t('task_list.index.no_task_lists_text') %> <%= t('task_list.new.tittle') %>
   </div>
 <%end %>
-<br>
-<%= link_to t('task_list.new.tittle'), root_url %>
+<hr>
+<%= link_to t('task_list.new.tittle'), root_url, class: 'btn btn-outline-primary' %>
