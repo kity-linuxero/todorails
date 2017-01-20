@@ -11,6 +11,11 @@
 </p>
 
 <p>
+  <strong><%= t 'task_list.modified_at'%>:</strong>
+  <%= l @task.updated_at.getlocal, format: :long %>
+</p>
+
+<p>
   <strong><%= t 'task.task_list'%>:</strong>
   <%= link_to @task.task_list.name, @task.task_list %>
 </p>
