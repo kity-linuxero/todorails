@@ -1,4 +1,5 @@
-# TODO-Rails [![Build Status](https://travis-ci.org/kity-linuxero/todorails.svg?branch=master)](https://travis-ci.org/kity-linuxero/todorails)
+# TODO-Rails
+[![Build Status](https://travis-ci.org/kity-linuxero/todorails.svg?branch=master)](https://travis-ci.org/kity-linuxero/todorails) [![Code Climate](https://codeclimate.com/github/kity-linuxero/todorails/badges/gpa.svg)](https://codeclimate.com/github/kity-linuxero/todorails) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://raw.githubusercontent.com/kity-linuxero/todorails/master/LICENSE)
 
 TODO-Rails es una aplicación desarrollada con Ruby on Rails 5.0.1 como trabajo integrador de la materia Taller de Tecnologías de producción de Software opción Lenguaje Ruby (cursada 2016) de la Universidad Nacional de La Plata.
 
@@ -78,7 +79,10 @@ Para acceder:
 
 # Unit Test
 Puedes correr los Unit Test para esta aplicación.
-
+* Todos los test:
+```bash
+  $ rails test
+ ```
 * Para el modelo de TaskList:
 ```bash
   $ rails test test/models/task_list_test.rb
@@ -146,11 +150,11 @@ TODO-Rails se compone por:
 ### Nueva lista
 En la página principal podremos empezar a interactuar con el programa escribiendo el nombre de una lista de tareas. Simplemente escribir el nombre y hacer clic en 'Submit'. Eso nos llevará a la página de la nueva Task List.
 
-### Last Task Lists:
+### Latest task lists:
 Cuando hayamos creado al menos una Task List, aparecera un listado de las últimas Task Lists (hasta 5 máximo) con un link que nos llevará a la página de la Task List. También se nos indicará la cantidad de Tasks que contiene la Task List.
 Cuando hayamos creado una Task List, se grabarán como cookies el id y el slug de la misma.
 
-### All my task lists
+### My task lists
 Se muestran todas las Task List realizadas en nuestra sesión. En dicho listado podremos acceder a cada Task List, crear una nueva, modificar o borrar una existente.
 
 ### About
@@ -160,7 +164,3 @@ Acerca de TODO-Rails
 Una Task por si sola no tiene sentido. Tiene que pertenecer a una Task List.
 Una vez creada una Task List podemos agregar Tasks.
 Dentro de la página de una Task List, por ejemplo [http://localhost:3000/task_lists/cosas-para-hacer-en-la-semana](http://localhost:3000/task_lists/cosas-para-hacer-en-la-semana) tendremos la opción "New Task". Donde podremos crear una Task.
-
-> Nota: Los campos que sean llenados y que no pertenecen al tipo de la Task seleccionada serán ignorados. Por ejemplo, en una Simple Task se ignorarán el 'Percentage of completion' y el rango de fechas start at y end at.
-
-> Una vez creada una Taks NO PODRÁ CAMBIARSE el type (tipo) de tarea. Sin embargo se podrán modificar 'edit' todos los demás atributos de la misma.

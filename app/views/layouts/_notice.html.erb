@@ -1,8 +1,6 @@
 <% unless notice.nil? %>
-<p class="alert alert-info fade in" role="alert" id="notice">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-     <span aria-hidden="true">&times;</span>
-   </button>
+<p class="alert alert-info fade in" role="alert" id="notice" style="display:none">
 <%= notice %>
 </p>
+<script>$('#notice').show(300).delay(2500).hide(1000)</script>
 <%end%>

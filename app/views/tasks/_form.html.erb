@@ -13,67 +13,51 @@
     </div>
   <% end %>
 
-<% unless task.type.nil?%>
-  <div class="form-group">
-    <label class="col-form-label"><%= f.label :type %>: <%= task.type %></label>
-  </div>
-<% end %>
-
   <div class="form-group" style='max-width:600px' >
     <%= f.label :description %>
     <%= f.text_field :description, class: "form-control", :required => true %>
   </div>
 
-<% if task.type.nil? %>
   <div class="form-group" style='max-width:600px'>
     <%= f.label :type %>
-    <%= f.select(:type, [[t('task.type.SimpleTask'),'SimpleTask'], [t('task.type.LongTask'),'LongTask'], [t('task.type.TemporaryTask'),'TemporaryTask']], {}, class: "form-control") %>
-  </div>
-<% end %>
-
-  <% unless task.type =="LongTask" %>
-  <div class="form-group" style='max-width:600px'>
-    <%= f.label :status %>
-    <%= f.select(:status, [[t('task.status.pending'),'pending'], [t('task.status.done'),'done']], {}, class: "form-control") %>
-  </div>
-  <% end %>
-
-    <div class="form-group" style='max-width:600px'>
-    <%= f.label :priority%>
-    <%= f.select(:priority, [[t('task.priority.high'),'high'], [t('task.priority.medium'),'medium'], [t('task.priority.low'),'low']], {}, class: "form-control", :required => true) %>
+    <%= f.select(:type, [[t('task.type.SimpleTask'),'SimpleTask'], [t('task.type.LongTask'),'LongTask'], [t('task.type.TemporaryTask'),'TemporaryTask']], {}, class: "form-control", onchange: "change(600)") %>
   </div>
 
-<% if task.type.nil? || task.type == "LongTask" %>
-  <div class="form-group" style='max-width:600px'>
+  <div class="form-group" style='max-width:600px' id="select_long">
     <%= f.label :percentage_of_completion%>
    <div class="input-group">
      <div class="input-group-addon">%</div>
-      <%= f.number_field :percentage_of_completion, class: "form-control", in: 0..100, placeholder: "0-100%" %> </div>
-    <% if task.type.nil? %>
-    <small class="form-text text-muted">Only for Long Tasks</small>
-    <% end %>
+      <%= f.number_field :percentage_of_completion, class: "form-control", in: 0..100, placeholder: "0-100%", :required => true, value: task.percentage_of_completion || '0' %>
+   </div>
   </div>
-<% end %>
 
-<% if task.type.nil? || task.type == "TemporaryTask" %>
-<div class="card" style='max-width:600px'>
+  <div class="form-group" style='max-width:600px' id="select_status">
+    <%= f.label :status %>
+    <%= f.select(:status, [[t('task.status.pending'),'pending'], [t('task.status.done'),'done']], {}, class: "form-control") %>
+  </div>
+
+    <div class="form-group" style='max-width:600px'>
+    <%= f.label :priority %>
+    <%= f.select(:priority, [[t('task.priority.high'),'high'], [t('task.priority.medium'),'medium'], [t('task.priority.low'),'low']], {}, class: "form-control")%>
+  </div>
+
+<div class="card" style='max-width:600px' id= "select_temp">
   <div class="card-block">
     <p class="card-text">Temporary task: </p>
   <div class="form-group">
-    <%= f.label :start_at %>
+    <%= f.label :start_at, class:"col-xs-3"%>
     <%= f.datetime_select :start_at %>
   </div>
   <div class="form-group">
-    <%= f.label :end_at %>
+    <%= f.label :end_at, class:"col-xs-3" %>
     <%= f.datetime_select :end_at %>
   </div>
   </div>
-  <small class="form-text text-muted">Only for Temporary Tasks</small>
 </div>
-<% end %>
 
+<script>change()</script>
   <div class="actions">
-    <%= f.submit :Submit, class: "btn btn-success" %>
+    <%= f.submit t('task_list.new.submit'), class: "btn btn-success" %>
   </div>
 <br>
 <% end %>

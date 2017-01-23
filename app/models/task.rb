@@ -9,6 +9,8 @@ class Task < ApplicationRecord
 
   validates_associated :task_list
 
+  validate :end_date_is_after_start_date, if: :conditions
+
   PRIORITIES = {
     'high' => 3,
     'medium'  => 2,
@@ -17,5 +19,16 @@ class Task < ApplicationRecord
 
   def <=> (other)
     PRIORITIES[other.priority] <=> PRIORITIES[self.priority]
+  end
+
+  private
+    def end_date_is_after_start_date
+      if end_at < start_at
+        errors.add(:end_at, " cannot be before the start date")
+      end
+  end
+
+  def conditions
+    type=='TemporaryTask'
   end
 end
