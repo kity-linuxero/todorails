@@ -16,9 +16,8 @@ function show_temporary_task(delay){
   $('#select_status').show(delay);
 }
 
-function change() {
-    var delay= 600;
-    var selectBox = document.getElementById("selects");
+function change(delay) {
+    var selectBox = document.getElementById("task_type");
     var selected = selectBox.options[selectBox.selectedIndex].value;
     if(selected === 'SimpleTask'){
       show_simple_task(delay)
