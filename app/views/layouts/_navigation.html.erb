@@ -11,9 +11,15 @@
     <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="http://example.com" id="responsiveNavbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%=t('application.language')%></a>
             <div class="dropdown-menu" aria-labelledby="responsiveNavbarDropdown">
-              <%= link_to "English", url_for(locale: "en"), class: 'dropdown-item'%>
-              <%= link_to "Español", url_for(locale: "es"), class: 'dropdown-item'%>
+              <div class="dropdown-item">
+              <%= image_tag("en.svg", size: "18") %>
+              <%= link_to_unless_current "English", url_for(locale: "en") %>
             </div>
+            <div class="dropdown-item">
+              <%= image_tag("es.svg", size: "18") %>
+              <%= link_to_unless_current "Español", url_for(locale: "es") %>
+            </div>
+        </div>
     </li>
 
     <li class="nav-item ">
@@ -30,15 +36,11 @@
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
           <div class="modal-header">
-
               <h4 class= "modal-title"><strong>TODO-Rails</strong></h4>
-
           </div>
-
-
       <div class="modal-body">
       <p>© 2016 - Cristian Giambruni</p>
-      <p>TODO-Rails under <a target="_blank" href="https://raw.githubusercontent.com/kity-linuxero/todorails/master/LICENSE"> MIT License</a></p>
+      <p>TODO-Rails v<%= ApplicationHelper::VERSION %> <a target="_blank" href="https://raw.githubusercontent.com/kity-linuxero/todorails/master/LICENSE"> MIT License</a></p>
       </div>
       <div class="modal-footer">
         UNLP | TTPS 2016 - Ruby <a target="_blank" href="https://github.com/kity-linuxero/todorails">

@@ -4,7 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## 1.3.0
+## 1.3.1 : 2017-01-27
+
+### Added
+- Flags to languages
+- Version in about.
+
+
+## 1.3.0 : 2017-01-23
 
 ### Added
 - Tasks can change type.
