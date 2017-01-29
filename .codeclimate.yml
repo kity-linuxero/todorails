@@ -2,7 +2,7 @@
 engines:
   brakeman:
     enabled: true
-     exclude_fingerprints:
+     exclude_fingerprints
      - f1aa7cb937ae65c16975340212ddbe79
      - e8b778522f85ba63a42a835a5cbf8b53
      - 236bd5b52b891f6b6d6c2aae71b67c42
