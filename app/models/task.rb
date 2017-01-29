@@ -22,7 +22,7 @@ class Task < ApplicationRecord
   end
 
   private
-    def end_date_is_after_start_date
+  def end_date_is_after_start_date
       if end_at < start_at
         errors.add(:end_at, " cannot be before the start date")
       end

@@ -12,9 +12,9 @@ class TemporaryTask < Task
 		def status
 			if end_at < Time.now
 			"expired"
-		else
-			super
-		end
-	end
+  		else
+  			super
+  		end
+  	end
 
 end
