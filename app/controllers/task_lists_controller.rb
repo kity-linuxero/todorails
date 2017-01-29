@@ -113,5 +113,5 @@ class TaskListsController < ApplicationController
          cookies.delete(x)
        end
      end
-    end
+   end
 end
