@@ -1,5 +1,5 @@
 # TODO-Rails
-[![Build Status](https://travis-ci.org/kity-linuxero/todorails.svg?branch=master)](https://travis-ci.org/kity-linuxero/todorails) [![Code Climate](https://codeclimate.com/github/kity-linuxero/todorails/badges/gpa.svg)](https://codeclimate.com/github/kity-linuxero/todorails) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://raw.githubusercontent.com/kity-linuxero/todorails/master/LICENSE)
+[![Build Status](https://travis-ci.org/kity-linuxero/todorails.svg?branch=master)](https://travis-ci.org/kity-linuxero/todorails) [![Code Climate](https://codeclimate.com/github/kity-linuxero/todorails/badges/gpa.svg)](https://codeclimate.com/github/kity-linuxero/todorails) [![license](https://img.shields.io/badge/License-MIT-blue.svg)](https://raw.githubusercontent.com/kity-linuxero/todorails/master/LICENSE)
 
 TODO-Rails es una aplicación desarrollada con Ruby on Rails 5.0.1 como trabajo integrador de la materia Taller de Tecnologías de producción de Software opción Lenguaje Ruby (cursada 2016) de la Universidad Nacional de La Plata.
 
