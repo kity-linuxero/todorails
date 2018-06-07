@@ -32,6 +32,8 @@ en:
     new_task: "New Task"
     all_my_task_list: "My task lists"
     confirmation: "Are you sure?"
+    bug1: "Any bug?"
+    bug2: "Create an issue"
     controller:
       set_task_list: "Task List does not exist."
       task:

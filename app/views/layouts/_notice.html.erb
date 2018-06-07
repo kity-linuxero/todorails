@@ -1,6 +1,8 @@
 <% unless notice.nil? %>
-<p class="alert alert-info fade in" role="alert" id="notice" style="display:none">
+<small>
+<p class="alert alert-info" role="alert" id="notice" style="display:none">
 <%= notice %>
 </p>
-<script>$('#notice').show(300).delay(2500).hide(1000)</script>
+</small>
+<script>$('#notice').show(500).delay(2500).hide(800)</script>
 <%end%>

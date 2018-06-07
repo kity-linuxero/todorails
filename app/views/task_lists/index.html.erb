@@ -1,4 +1,4 @@
-<%= render 'layouts/notice' %>
+
 <% unless @task_lists.nil? or @task_lists.empty? %>
 <h3><%= t('application.all_my_task_list')%>:</h3>
 
@@ -35,3 +35,6 @@
 <%end %>
 <hr>
 <%= link_to t('task_list.new.tittle'), root_url, class: 'btn btn-outline-primary' %>
+<br>
+<br>
+<%= render 'layouts/notice' %>

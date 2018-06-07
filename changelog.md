@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.4.0 : 2018-06-07
+
+### Added
+- Change official repository to Gitlab #movingToGitlab. Fuck M$!
+- Some W3C Validator recomendations.
+
+### Updated
+- Bootstrap 4.0.0 stable (from 4.0.0.alpha5)
+- Readme
+- About information
+
+### Removed
+- TravisCI, codeclimate integration with M$ Github.
+
+### Change
+- Notifications position
+
 ## 1.3.1 : 2017-01-27
 
 ### Added

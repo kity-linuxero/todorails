@@ -11,6 +11,8 @@ es:
     new_task: "Nueva Tarea"
     all_my_task_list: "Mis listas"
     confirmation: "¿Estás seguro?"
+    bug1: "¿Algún bug?"
+    bug2: "Infórmalo con un issue"
     controller:
       set_task_list: "La lista de tareas no existe."
       task:
