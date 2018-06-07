@@ -1,7 +1,9 @@
-<nav class="navbar  navbar-dark bg-inverse">
-  <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <button class="navbar-toggler p-0 border-0" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
   <%= link_to "TODO-Rails", root_url, class: 'navbar-brand' %>
-  <div class="collapse navbar-toggleable-md" id="navbarResponsive">
+  <div class="navbar-collapse collapse" id="navbarResponsive">
 
   <ul class="nav navbar-nav">
     <li class="nav-item ">
@@ -9,7 +11,7 @@
     </li>
 
     <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="responsiveNavbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%=t('application.language')%></a>
+            <a class="nav-link dropdown-toggle" href="#" id="responsiveNavbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%=t('application.language')%></a>
             <div class="dropdown-menu" aria-labelledby="responsiveNavbarDropdown">
               <div class="dropdown-item">
               <%= image_tag("en.svg", size: "18") %>
@@ -36,15 +38,17 @@
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
           <div class="modal-header">
-              <h4 class= "modal-title"><strong>TODO-Rails</strong></h4>
+              <h4 class= "modal-title"><strong><%= ApplicationHelper::NAME %></strong></h4>
           </div>
       <div class="modal-body">
-      <p>© 2016 - Cristian Giambruni</p>
-      <p>TODO-Rails v<%= ApplicationHelper::VERSION %> <a target="_blank" href="https://raw.githubusercontent.com/kity-linuxero/todorails/master/LICENSE"> MIT License</a></p>
+      <p>© <%= ApplicationHelper::YEAR %> - <%= ApplicationHelper::DEVELOPERS %></p>
+      <p><%= ApplicationHelper::NAME %> <a target="_blank" href="https://gitlab.com/giambcri/todorails/blob/bc2bfb2b644f642bd225fa19ef9f3fbdd0ffc067/changelog.md"> v<%= ApplicationHelper::VERSION %></a><br>
+      <small><a target="_blank" href="https://gitlab.com/giambcri/todorails/raw/bc2bfb2b644f642bd225fa19ef9f3fbdd0ffc067/LICENSE"> MIT License</a></p></small>
+      <small><%= t('application.bug1') %> <a target="_blank" href="https://gitlab.com/giambcri/todorails/issues/new?issue%5Bassignee_id%5D=&issue%5Bmilestone_id%5D="> <%= t('application.bug2')%></small>
       </div>
       <div class="modal-footer">
-        UNLP | TTPS 2016 - Ruby <a target="_blank" href="https://github.com/kity-linuxero/todorails">
-          <%= image_tag("github.png", size: "32") %>
+        UNLP | TTPS 2016 - Ruby <a target="_blank" href="https://gitlab.com/giambcri/todorails">
+          <%= image_tag("gitlab.png", size: "20") %>
         </a>
       </div>
     </div>

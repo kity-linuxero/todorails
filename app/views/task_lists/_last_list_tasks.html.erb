@@ -5,8 +5,8 @@
 <div class="list-group">
   <% @last_list_tasks.each do |task_list| %>
   <a href= <%= task_list_url(task_list) %> class="list-group-item list-group-item-action">
-      <span class="tag tag-default tag-pill float-xs-right"><%= task_list.tasks.count %></span>
       <%= task_list.name %>
+      <span class="badge badge-pill badge-info float-right"><%= task_list.tasks.count %></span>
     </a>
   <% end %>
 </div>
