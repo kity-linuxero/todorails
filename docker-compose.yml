@@ -1,0 +1,17 @@
+version: '3'
+services:
+  db:
+    image: postgres
+  web:
+    build: .
+    volumes:
+      - .:/todorails
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: "3000"
+      PGHOST: "db"
+      PGUSER: "postgres"
+      PGDBNAME: "todorails"
+    depends_on:
+      - db

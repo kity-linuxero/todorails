@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## Unreleased
+
+### Added
+- Dockerfile and instructions to run Todorail's containers.
+
+### Change
+- Official repository move to Github. _F*ck M$!_
+
 ## 1.4.0 : 2018-06-07
 
 ### Added
